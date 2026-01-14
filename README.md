@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# Avatars Animation Annotation Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript web application for annotating and evaluating 3D humanoid character animations. Uses the [Agent Station Avatar SDK](https://www.npmjs.com/package/@agent-station/avatar-web) to display VRMA (VRM Animation) files and allows users to rate animations with quality, character type, and action tags.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **VRMA Animation Playback**: View and evaluate 3D humanoid animations
+- **Quality Ratings**: Mark animations as approved, rejected, or maybe
+- **Character Tagging**: Assign character types (Sarang, Yeona, Other, None)
+- **Action Tags**: Categorize animations (idle, greeting, reaction, conversation, locomotion, combat)
+- **Keyboard Shortcuts**: Efficient annotation workflow
+- **LocalStorage Persistence**: Annotations saved locally with import/export support
+- **Filtering**: Filter animations by pack, category, or annotation status
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js 18+
+- npm
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Generate Animation Manifest
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Before first use, scan the `/animations` directory to create the manifest:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run generate-manifest
 ```
+
+### Development
+
+```bash
+npm run dev
+```
+
+## Adding Animations
+
+Place VRMA files in the `/animations` directory following this structure:
+
+```
+/animations
+  /{pack-name}
+    /{category}
+      animation1.vrma
+      animation2.vrma
+```
+
+After adding new files, regenerate the manifest:
+
+```bash
+npm run generate-manifest
+```
+
+## Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| **1 / 2 / 3** | Set quality: approved / rejected / maybe |
+| **S / Y / O / N** | Set character: Sarang / Yeona / Other / None |
+| **I / G / R / C / L / X** | Toggle tags: idle / greeting / reaction / conversation / locomotion / combat |
+| **Enter / Arrows** | Navigate animations |
+| **Space** | Replay current animation |
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server with HMR |
+| `npm run build` | TypeScript compile + Vite production build |
+| `npm run lint` | Run ESLint |
+| `npm run preview` | Preview production build |
+| `npm run generate-manifest` | Scan /animations and create manifest |
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Agent Station Avatar SDK
+
+## License
+
+MIT
