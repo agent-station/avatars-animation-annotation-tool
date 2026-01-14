@@ -1,8 +1,9 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { AvatarViewer } from './components/AvatarViewer';
 import { AnnotationPanel } from './components/AnnotationPanel';
 import { ProgressBar } from './components/ProgressBar';
 import { AnimationList } from './components/AnimationList';
+import { KeyboardShortcutsModal } from './components/KeyboardShortcutsModal';
 import { useAnnotations } from './hooks/useAnnotations';
 import { useAnimationList } from './hooks/useAnimationList';
 import type { AnimationEntry } from './types';
@@ -38,6 +39,10 @@ function App() {
     getAnnotationCount,
     exportAnnotations,
     importAnnotations,
+    undo,
+    redo,
+    canUndo,
+    canRedo,
   } = useAnnotations();
 
   const annotatedPaths = useMemo(
@@ -55,10 +60,56 @@ function App() {
     packs,
     getAnimationByIndex,
     filteredCount,
-  } = useAnimationList(annotatedPaths);
+  } = useAnimationList(annotatedPaths, annotationData.annotations);
+
+  // Compute quality stats for filtered animations
+  const qualityStats = useMemo(() => {
+    const stats = { approved: 0, rejected: 0, maybe: 0 };
+    filteredAnimations.forEach((anim) => {
+      const annotation = annotationData.annotations[anim.path];
+      if (annotation) {
+        stats[annotation.quality]++;
+      }
+    });
+    return stats;
+  }, [filteredAnimations, annotationData.annotations]);
 
   const [replayKey, setReplayKey] = useState(0);
   const [hasInitialized, setHasInitialized] = useState(false);
+  const [showShortcutsModal, setShowShortcutsModal] = useState(false);
+
+  // Global keyboard shortcuts for help modal and undo/redo
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ignore if typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        return;
+      }
+
+      // Undo: Ctrl+Z (or Cmd+Z on Mac)
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+        return;
+      }
+
+      // Redo: Ctrl+Shift+Z (or Cmd+Shift+Z on Mac) or Ctrl+Y
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'Z' || (e.key === 'z' && e.shiftKey) || e.key === 'y')) {
+        e.preventDefault();
+        redo();
+        return;
+      }
+
+      // Help modal
+      if (e.key === '?' && !showShortcutsModal) {
+        e.preventDefault();
+        setShowShortcutsModal(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showShortcutsModal, undo, redo]);
 
   // Compute initial index synchronously - only calculated once when data first becomes available
   const initialIndex = useMemo(() => {
@@ -197,6 +248,50 @@ function App() {
         <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold">Avatars Animation Reviewer</h1>
           <div className="flex items-center gap-2">
+            {/* Undo/Redo buttons */}
+            <div className="flex items-center border-r border-gray-700 pr-2 mr-1">
+              <button
+                onClick={undo}
+                disabled={!canUndo}
+                className={`p-1.5 rounded transition-colors ${
+                  canUndo
+                    ? 'text-gray-400 hover:text-white hover:bg-gray-700'
+                    : 'text-gray-600 cursor-not-allowed'
+                }`}
+                title="Undo (Ctrl+Z)"
+                aria-label="Undo"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                </svg>
+              </button>
+              <button
+                onClick={redo}
+                disabled={!canRedo}
+                className={`p-1.5 rounded transition-colors ${
+                  canRedo
+                    ? 'text-gray-400 hover:text-white hover:bg-gray-700'
+                    : 'text-gray-600 cursor-not-allowed'
+                }`}
+                title="Redo (Ctrl+Shift+Z)"
+                aria-label="Redo"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 10h-10a8 8 0 00-8 8v2M21 10l-6 6m6-6l-6-6" />
+                </svg>
+              </button>
+            </div>
+
+            <button
+              onClick={() => setShowShortcutsModal(true)}
+              className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors"
+              title="Keyboard shortcuts (?)"
+              aria-label="Show keyboard shortcuts"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
             <button
               onClick={handleClearCache}
               className="px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 rounded transition-colors"
@@ -244,6 +339,7 @@ function App() {
             total={filteredCount}
             annotatedInView={filteredAnimations.filter((a) => annotatedPaths.has(a.path)).length}
             annotatedTotal={getAnnotationCount()}
+            qualityStats={qualityStats}
           />
 
           {/* Viewer and annotation panel */}
@@ -252,7 +348,7 @@ function App() {
             <div className="flex-1">
               {currentAnimation ? (
                 <AvatarViewer
-                  key={`${currentAnimation.path}-${replayKey}`}
+                  key={replayKey}
                   animationPath={currentAnimation.path}
                   onError={(err) => console.error(err)}
                 />
@@ -264,7 +360,7 @@ function App() {
             </div>
 
             {/* Annotation panel */}
-            <div className="w-80 flex-shrink-0">
+            <div className="w-72 flex-shrink-0">
               {currentAnimation ? (
                 <AnnotationPanel
                   animationPath={currentAnimation.path}
@@ -283,6 +379,12 @@ function App() {
           </div>
         </main>
       </div>
+
+      {/* Keyboard shortcuts modal */}
+      <KeyboardShortcutsModal
+        isOpen={showShortcutsModal}
+        onClose={() => setShowShortcutsModal(false)}
+      />
     </div>
   );
 }
