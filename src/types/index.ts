@@ -11,9 +11,10 @@ export interface Annotation {
 
 export interface AnnotationData {
   version: number;
-  characters: string[];
-  tags: string[];
+  characters: Character[];
+  tags: ActionTag[];
   lastReviewedIndex: number;
+  lastReviewedPath: string | null;
   annotations: Record<string, Annotation>;
 }
 

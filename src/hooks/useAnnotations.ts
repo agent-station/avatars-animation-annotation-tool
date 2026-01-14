@@ -8,26 +8,78 @@ const defaultAnnotationData: AnnotationData = {
   characters: ['sarang', 'yeona', 'other'],
   tags: ['idle', 'greeting', 'reaction', 'conversation', 'locomotion', 'combat'],
   lastReviewedIndex: 0,
+  lastReviewedPath: null,
   annotations: {},
 };
 
-export function useAnnotations() {
-  const [data, setData] = useState<AnnotationData>(defaultAnnotationData);
-  const [isLoading, setIsLoading] = useState(true);
+// Valid values for annotation fields
+const VALID_QUALITIES: Quality[] = ['approved', 'rejected', 'maybe'];
+const VALID_CHARACTERS: Character[] = ['sarang', 'yeona', 'other', 'none'];
+const VALID_TAGS: ActionTag[] = ['idle', 'greeting', 'reaction', 'conversation', 'locomotion', 'combat'];
 
-  // Load annotations from localStorage on mount
-  useEffect(() => {
+// Validate a single annotation entry
+function isValidAnnotation(annotation: unknown): annotation is Annotation {
+  if (typeof annotation !== 'object' || annotation === null) return false;
+  const obj = annotation as Record<string, unknown>;
+
+  return (
+    typeof obj.quality === 'string' &&
+    VALID_QUALITIES.includes(obj.quality as Quality) &&
+    typeof obj.character === 'string' &&
+    VALID_CHARACTERS.includes(obj.character as Character) &&
+    Array.isArray(obj.tags) &&
+    obj.tags.every((tag) => typeof tag === 'string' && VALID_TAGS.includes(tag as ActionTag)) &&
+    typeof obj.annotatedAt === 'string'
+  );
+}
+
+// Runtime validation for imported annotation data
+function isValidAnnotationData(data: unknown): data is AnnotationData {
+  if (typeof data !== 'object' || data === null) return false;
+  const obj = data as Record<string, unknown>;
+
+  // Check basic structure
+  if (
+    typeof obj.version !== 'number' ||
+    typeof obj.annotations !== 'object' ||
+    obj.annotations === null ||
+    !Array.isArray(obj.characters) ||
+    !Array.isArray(obj.tags)
+  ) {
+    return false;
+  }
+
+  // Validate each annotation entry
+  const annotations = obj.annotations as Record<string, unknown>;
+  for (const [path, annotation] of Object.entries(annotations)) {
+    if (typeof path !== 'string' || !isValidAnnotation(annotation)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Load initial data from localStorage synchronously to avoid cascading renders
+function loadInitialData(): AnnotationData {
+  try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
-      try {
-        const parsed = JSON.parse(saved) as AnnotationData;
-        setData(parsed);
-      } catch (e) {
-        console.error('Failed to parse saved annotations:', e);
+      const parsed = JSON.parse(saved);
+      if (isValidAnnotationData(parsed)) {
+        return parsed;
       }
     }
-    setIsLoading(false);
-  }, []);
+  } catch {
+    // Fall through to default
+  }
+  return defaultAnnotationData;
+}
+
+export function useAnnotations() {
+  // Use lazy initialization to avoid cascading renders
+  const [data, setData] = useState<AnnotationData>(loadInitialData);
+  const [isLoading] = useState(false);
 
   // Save annotations to localStorage whenever data changes
   useEffect(() => {
@@ -69,10 +121,11 @@ export function useAnnotations() {
     []
   );
 
-  const setLastReviewedIndex = useCallback((index: number) => {
+  const setLastReviewedIndex = useCallback((index: number, path?: string) => {
     setData((prev) => ({
       ...prev,
       lastReviewedIndex: index,
+      lastReviewedPath: path ?? prev.lastReviewedPath,
     }));
   }, []);
 
@@ -92,18 +145,65 @@ export function useAnnotations() {
     URL.revokeObjectURL(url);
   }, [data]);
 
-  const importAnnotations = useCallback((file: File) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        const imported = JSON.parse(e.target?.result as string) as AnnotationData;
-        setData(imported);
-      } catch (err) {
-        console.error('Failed to import annotations:', err);
-      }
-    };
-    reader.readAsText(file);
-  }, []);
+  const importAnnotations = useCallback(
+    (file: File, options?: { merge?: boolean; skipConfirmation?: boolean }): Promise<boolean> => {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const parsed = JSON.parse(e.target?.result as string);
+
+            // Validate the imported data structure
+            if (!isValidAnnotationData(parsed)) {
+              alert('Invalid annotation file format. The file must contain valid annotation data.');
+              resolve(false);
+              return;
+            }
+
+            const imported = parsed as AnnotationData;
+            const existingCount = Object.keys(data.annotations).length;
+            const importedCount = Object.keys(imported.annotations).length;
+
+            // Require confirmation unless explicitly skipped
+            if (!options?.skipConfirmation && existingCount > 0) {
+              const action = options?.merge ? 'merge with' : 'replace';
+              const confirmed = window.confirm(
+                `You have ${existingCount} existing annotations. This will ${action} ${importedCount} imported annotations. Continue?`
+              );
+              if (!confirmed) {
+                resolve(false);
+                return;
+              }
+            }
+
+            if (options?.merge) {
+              // Merge: imported annotations take precedence over existing
+              setData((prev) => ({
+                ...prev,
+                annotations: {
+                  ...prev.annotations,
+                  ...imported.annotations,
+                },
+              }));
+            } else {
+              // Replace all data
+              setData(imported);
+            }
+            resolve(true);
+          } catch {
+            alert('Failed to parse annotation file. Please ensure it is valid JSON.');
+            resolve(false);
+          }
+        };
+        reader.onerror = () => {
+          alert('Failed to read the file.');
+          resolve(false);
+        };
+        reader.readAsText(file);
+      });
+    },
+    [data.annotations]
+  );
 
   return {
     data,
