@@ -152,6 +152,18 @@ function App() {
       if (db.name) indexedDB.deleteDatabase(db.name);
     });
 
+    // Fetch fresh manifest to bust HTTP cache
+    const cdnBase = 'https://avatars.staging.agsn.ai';
+    await fetch(`${cdnBase}/manifest.json`, { cache: 'reload' });
+
+    // Also fetch the webview with cache bust
+    const manifestResp = await fetch(`${cdnBase}/manifest.json`, { cache: 'no-store' });
+    const manifest = await manifestResp.json();
+    const webviewVersion = manifest.webview?.version;
+    if (webviewVersion) {
+      await fetch(`${cdnBase}/webview/${webviewVersion}/index.html`, { cache: 'reload' });
+    }
+
     // Reload to fetch fresh SDK
     window.location.reload();
   }, []);
