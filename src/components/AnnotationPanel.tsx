@@ -11,6 +11,8 @@ interface AnnotationPanelProps {
   onNext: () => void;
   onPrevious: () => void;
   onReplay: () => void;
+  isPaused: boolean;
+  onTogglePause: () => void;
 }
 
 const QUALITY_OPTIONS: { value: Quality; label: string; key: string }[] = [
@@ -42,6 +44,8 @@ export function AnnotationPanel({
   onNext,
   onPrevious,
   onReplay,
+  isPaused,
+  onTogglePause,
 }: AnnotationPanelProps) {
   const currentQuality = annotation?.quality ?? 'maybe';
   const currentCharacter = annotation?.character ?? 'none';
@@ -50,7 +54,6 @@ export function AnnotationPanel({
   const currentNotes = annotation?.notes ?? '';
 
   // UI state
-  const [showInfo, setShowInfo] = useState(false);
   const [notesInput, setNotesInput] = useState(currentNotes);
 
   // Sync notes input when animation changes
@@ -155,6 +158,13 @@ export function AnnotationPanel({
         return;
       }
 
+      // Playback control
+      if (key === 'p') {
+        e.preventDefault();
+        onTogglePause();
+        return;
+      }
+
       // Navigation
       if (key === 'enter') {
         onNext();
@@ -170,7 +180,7 @@ export function AnnotationPanel({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [setQuality, setCharacter, toggleTag, onNext, onPrevious, onReplay]);
+  }, [setQuality, setCharacter, toggleTag, onNext, onPrevious, onReplay, onTogglePause]);
 
   // Parse animation path for display with fallbacks for malformed paths
   const pathParts = animationPath ? animationPath.split('/').filter(Boolean) : [];
@@ -178,105 +188,142 @@ export function AnnotationPanel({
   const category = pathParts.length > 2 ? pathParts.slice(1, -1).join('/') : null;
   const filename = pathParts.length > 0 ? pathParts[pathParts.length - 1] : animationPath || 'Unknown';
 
+  // Helper to get quality button styles
+  const getQualityButtonStyles = (option: typeof QUALITY_OPTIONS[0], isSelected: boolean) => {
+    const baseStyles = 'flex items-center justify-center gap-1 px-2 py-1.5 rounded-md text-xs font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-800';
+
+    if (isSelected) {
+      switch (option.value) {
+        case 'approved':
+          return `${baseStyles} bg-green-600 text-white focus:ring-green-500`;
+        case 'rejected':
+          return `${baseStyles} bg-red-600 text-white focus:ring-red-500`;
+        case 'maybe':
+          return `${baseStyles} bg-amber-500 text-gray-900 focus:ring-amber-500`;
+      }
+    }
+    return `${baseStyles} bg-gray-700/50 text-gray-300 border border-gray-600 hover:bg-gray-600 hover:border-gray-500 focus:ring-gray-500`;
+  };
+
   return (
-    <div className="bg-gray-800 rounded-lg p-4 space-y-4">
-      {/* Animation info (collapsible) */}
-      <div className="border-b border-gray-700 pb-3">
-        <button
-          onClick={() => setShowInfo(!showInfo)}
-          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors w-full text-left"
-        >
-          <svg
-            className={`w-4 h-4 transition-transform ${showInfo ? 'rotate-90' : ''}`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-          <span className="text-white font-mono text-sm truncate flex-1">{filename}</span>
-        </button>
-        {showInfo && (
-          <div className="mt-2 pl-6 text-sm text-gray-400">
-            <p>Pack: {pack}</p>
-            {category && <p>Category: {category}</p>}
-          </div>
-        )}
+    <div className="bg-gray-800 rounded-lg p-3 space-y-3">
+      {/* Animation info header */}
+      <div className="pb-2 border-b border-gray-700">
+        <h3 className="font-medium text-white text-xs truncate mb-1" title={filename}>
+          {filename}
+        </h3>
+        <div className="flex items-center gap-2 text-[10px] text-gray-500">
+          <span className="flex items-center gap-1 truncate">
+            <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            <span className="truncate">{pack}</span>
+          </span>
+          {category && (
+            <span className="flex items-center gap-1 truncate">
+              <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+              </svg>
+              <span className="truncate">{category}</span>
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Quality */}
-      <div className={`p-2 -m-2 rounded-lg transition-all duration-300 ${flashSection === 'quality' ? 'ring-2 ring-green-500/50 bg-green-500/10' : ''}`}>
-        <p className="text-xs text-gray-400 mb-2">Quality</p>
-        <div className="flex gap-2">
+      <div className={`p-2.5 rounded-lg transition-all duration-300 ${
+        flashSection === 'quality'
+          ? 'ring-2 ring-green-400/60 bg-green-400/15'
+          : 'bg-gray-700/30'
+      }`}>
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-2">
+          Quality
+        </p>
+        <div className="grid grid-cols-3 gap-1.5">
           {QUALITY_OPTIONS.map((option) => (
             <button
               key={option.value}
               onClick={() => setQuality(option.value)}
-              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                currentQuality === option.value
-                  ? option.value === 'approved'
-                    ? 'bg-green-600 text-white'
-                    : option.value === 'rejected'
-                      ? 'bg-red-600 text-white'
-                      : 'bg-yellow-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-              }`}
+              className={getQualityButtonStyles(option, currentQuality === option.value)}
             >
-              [{option.key}] {option.label}
+              <kbd className="inline-flex items-center justify-center w-4 h-4 text-[10px] bg-black/20 rounded">
+                {option.key}
+              </kbd>
+              <span>{option.label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Character */}
-      <div className={`p-2 -m-2 rounded-lg transition-all duration-300 ${flashSection === 'character' ? 'ring-2 ring-blue-500/50 bg-blue-500/10' : ''}`}>
-        <p className="text-xs text-gray-400 mb-2">Character</p>
-        <div className="flex gap-2 flex-wrap">
+      <div className={`p-2.5 rounded-lg transition-all duration-300 ${
+        flashSection === 'character'
+          ? 'ring-2 ring-blue-400/60 bg-blue-400/15'
+          : 'bg-gray-700/30'
+      }`}>
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-2">
+          Character
+        </p>
+        <div className="grid grid-cols-2 gap-1.5">
           {CHARACTER_OPTIONS.map((option) => (
             <button
               key={option.value}
               onClick={() => setCharacter(option.value)}
-              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+              className={`flex items-center justify-center gap-1 px-2 py-1.5 rounded-md text-xs font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-800 ${
                 currentCharacter === option.value
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  ? 'bg-blue-600 text-white focus:ring-blue-500'
+                  : 'bg-gray-700/50 text-gray-300 border border-gray-600 hover:bg-gray-600 hover:border-gray-500 focus:ring-gray-500'
               }`}
             >
-              [{option.key.toUpperCase()}] {option.label}
+              <kbd className="inline-flex items-center justify-center w-4 h-4 text-[10px] bg-black/20 rounded">
+                {option.key.toUpperCase()}
+              </kbd>
+              <span>{option.label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Tags */}
-      <div className={`p-2 -m-2 rounded-lg transition-all duration-300 ${flashSection === 'tags' ? 'ring-2 ring-purple-500/50 bg-purple-500/10' : ''}`}>
-        <p className="text-xs text-gray-400 mb-2">Tags</p>
-        <div className="flex gap-2 flex-wrap">
+      <div className={`p-2.5 rounded-lg transition-all duration-300 ${
+        flashSection === 'tags'
+          ? 'ring-2 ring-purple-400/60 bg-purple-400/15'
+          : 'bg-gray-700/30'
+      }`}>
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-2">
+          Tags
+        </p>
+        <div className="grid grid-cols-2 gap-1.5">
           {TAG_OPTIONS.map((option) => (
             <button
               key={option.value}
               onClick={() => toggleTag(option.value)}
-              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+              className={`flex items-center justify-center gap-1 px-2 py-1.5 rounded-md text-xs font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-800 ${
                 currentTags.includes(option.value)
-                  ? 'bg-purple-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  ? 'bg-purple-600 text-white focus:ring-purple-500'
+                  : 'bg-gray-700/50 text-gray-300 border border-gray-600 hover:bg-gray-600 hover:border-gray-500 focus:ring-gray-500'
               }`}
             >
-              [{option.key.toUpperCase()}] {option.label}
+              <kbd className="inline-flex items-center justify-center w-4 h-4 text-[10px] bg-black/20 rounded">
+                {option.key.toUpperCase()}
+              </kbd>
+              <span>{option.label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Notes */}
-      <div>
-        <p className="text-xs text-gray-400 mb-2">Notes (optional)</p>
+      <div className="pt-1 border-t border-gray-700">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-2">
+          Notes <span className="font-normal text-gray-500">(optional)</span>
+        </p>
         <textarea
           value={notesInput}
           onChange={(e) => setNotesInput(e.target.value)}
           onBlur={handleNotesBlur}
           placeholder="Add notes about this animation..."
-          className="w-full bg-gray-700 text-white text-sm rounded px-3 py-2 placeholder-gray-500 resize-none h-16"
+          className="w-full bg-gray-700/50 text-white text-xs rounded-lg px-2.5 py-2 placeholder-gray-500 resize-none h-16 border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 focus:outline-none transition-colors"
           aria-label="Annotation notes"
         />
       </div>
@@ -285,19 +332,48 @@ export function AnnotationPanel({
       {annotation && (
         <button
           onClick={handleClearAnnotation}
-          className="w-full px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 text-gray-300 rounded transition-colors"
+          className="w-full px-2.5 py-1.5 text-xs bg-gray-700/50 hover:bg-red-900/30 text-gray-400 hover:text-red-400 rounded-md border border-gray-600 hover:border-red-800 transition-colors"
         >
           Clear Annotation
         </button>
       )}
 
       {/* Navigation hint */}
-      <div className="border-t border-gray-700 pt-3 text-xs text-gray-500">
-        <p>
-          <span className="text-gray-400">[Enter]</span> Next &nbsp;
-          <span className="text-gray-400">[Arrows]</span> Navigate &nbsp;
-          <span className="text-gray-400">[Space]</span> Replay
-        </p>
+      <div className="border-t border-gray-700 pt-2.5">
+        <div className="flex items-center justify-between text-[9px]">
+          <div className="flex items-center gap-1">
+            <kbd className="px-1 py-0.5 bg-gray-700 rounded text-gray-400 font-medium">Enter</kbd>
+            <span className="text-gray-500">Next</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <kbd className="px-1 py-0.5 bg-gray-700 rounded text-gray-400 font-medium">←→</kbd>
+            <span className="text-gray-500">Nav</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <kbd className="px-1 py-0.5 bg-gray-700 rounded text-gray-400 font-medium">Space</kbd>
+            <span className="text-gray-500">Replay</span>
+          </div>
+          <button
+            onClick={onTogglePause}
+            className={`flex items-center gap-1 px-1.5 py-0.5 rounded transition-colors ${
+              isPaused
+                ? 'bg-blue-600 text-white'
+                : 'bg-gray-700 text-gray-400 hover:text-gray-300'
+            }`}
+            title={isPaused ? 'Resume (P)' : 'Pause (P)'}
+          >
+            {isPaused ? (
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+              </svg>
+            ) : (
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+            )}
+            <kbd className="font-medium">P</kbd>
+          </button>
+        </div>
       </div>
     </div>
   );
