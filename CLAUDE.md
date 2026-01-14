@@ -52,3 +52,25 @@ All types in `src/types/index.ts`:
 ## Animation Files
 
 VRMA files must be placed in `/animations/{pack}/{category}/` structure. The manifest generator walks this directory to build metadata. Animations are served from the public path `/animations/`.
+
+## Agents
+
+Specialized agents in `.claude/agents/` for different roles:
+
+| Agent | Purpose |
+|-------|---------|
+| **product-owner** | Requirements, user stories, acceptance criteria, feature prioritization |
+| **software-engineer** | React/TypeScript implementation, Tailwind styling, component development |
+| **ux-designer** | Workflow optimization, keyboard shortcuts, accessibility, interaction design |
+| **qa-lead** | Functional testing, data integrity verification, edge case coverage |
+| **animation-specialist** | VRMA format expertise, animation quality criteria, character suitability |
+
+## Skills
+
+Reusable skills in `.claude/skills/` for common tasks:
+
+| Skill | Use Case |
+|-------|----------|
+| **animation-analysis** | Analyzing VRMA files, understanding animation directory structure, file organization |
+| **component-patterns** | Following React patterns, Tailwind conventions, hook implementations |
+| **annotation-workflow** | Managing annotation data, localStorage persistence, import/export operations |
