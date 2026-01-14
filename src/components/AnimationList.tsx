@@ -1,6 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import type { AnimationEntry } from '../types';
 import type { AnimationFilter } from '../hooks/useAnimationList';
+
+// Debounce hook for search input
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+
+  return debouncedValue;
+}
 
 interface AnimationListProps {
   animations: AnimationEntry[];
@@ -13,6 +26,8 @@ interface AnimationListProps {
   onFilterChange: (filter: AnimationFilter) => void;
 }
 
+const ITEM_HEIGHT = 52; // Approximate height of each list item
+
 export function AnimationList({
   animations,
   currentIndex,
@@ -23,22 +38,68 @@ export function AnimationList({
   onSelect,
   onFilterChange,
 }: AnimationListProps) {
-  const currentItemRef = useRef<HTMLButtonElement>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
+  const [searchInput, setSearchInput] = useState(filter.searchQuery ?? '');
+  const debouncedSearch = useDebounce(searchInput, 300);
+
+  // Update filter when debounced search changes
+  useEffect(() => {
+    // Normalize both to handle '' vs undefined comparison
+    const normalizedSearch = debouncedSearch || undefined;
+    if (normalizedSearch !== filter.searchQuery) {
+      onFilterChange({ ...filter, searchQuery: normalizedSearch });
+    }
+  }, [debouncedSearch, filter, onFilterChange]);
+
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  }, []);
+
+  const handleClearSearch = useCallback(() => {
+    setSearchInput('');
+  }, []);
+
+  const virtualizer = useVirtualizer({
+    count: animations.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => ITEM_HEIGHT,
+    overscan: 10,
+  });
 
   // Scroll current item into view when index changes
   useEffect(() => {
-    if (currentItemRef.current) {
-      currentItemRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-      });
+    if (currentIndex >= 0 && currentIndex < animations.length) {
+      virtualizer.scrollToIndex(currentIndex, { align: 'auto', behavior: 'smooth' });
     }
-  }, [currentIndex]);
+  }, [currentIndex, animations.length, virtualizer]);
 
   return (
     <div className="flex flex-col h-full bg-gray-800 rounded-lg overflow-hidden">
-      {/* Filters */}
+      {/* Search and Filters */}
       <div className="p-3 border-b border-gray-700 space-y-2">
+        {/* Search Input */}
+        <div className="relative">
+          <input
+            type="text"
+            value={searchInput}
+            onChange={handleSearchChange}
+            placeholder="Search animations..."
+            className="w-full bg-gray-700 text-white text-sm rounded px-3 py-1.5 pr-8 placeholder-gray-500"
+            aria-label="Search animations by name"
+          />
+          {searchInput && (
+            <button
+              onClick={handleClearSearch}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+              aria-label="Clear search"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+
         <select
           value={filter.pack ?? ''}
           onChange={(e) => onFilterChange({ ...filter, pack: e.target.value || undefined })}
@@ -76,16 +137,56 @@ export function AnimationList({
           />
           Unannotated only
         </label>
+
+        {/* Quality filter chips */}
+        <div className="flex gap-1 flex-wrap">
+          {[
+            { value: 'all' as const, label: 'All', color: 'gray' },
+            { value: 'approved' as const, label: 'Approved', color: 'green' },
+            { value: 'rejected' as const, label: 'Rejected', color: 'red' },
+            { value: 'maybe' as const, label: 'Maybe', color: 'yellow' },
+          ].map((option) => {
+            const isActive = (filter.qualityFilter ?? 'all') === option.value;
+            const colorClasses = {
+              gray: isActive ? 'bg-gray-600 text-white' : 'bg-gray-700/50 text-gray-400',
+              green: isActive ? 'bg-green-600 text-white' : 'bg-gray-700/50 text-gray-400',
+              red: isActive ? 'bg-red-600 text-white' : 'bg-gray-700/50 text-gray-400',
+              yellow: isActive ? 'bg-yellow-600 text-white' : 'bg-gray-700/50 text-gray-400',
+            };
+            return (
+              <button
+                key={option.value}
+                onClick={() =>
+                  onFilterChange({
+                    ...filter,
+                    qualityFilter: option.value === 'all' ? undefined : option.value,
+                  })
+                }
+                className={`px-2 py-0.5 text-xs rounded transition-colors ${colorClasses[option.color]}`}
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      {/* List */}
-      <div className="flex-1 overflow-y-auto" role="listbox" aria-label="Animation list">
+      {/* Virtualized List */}
+      <div
+        ref={parentRef}
+        className="flex-1 overflow-y-auto"
+        role="listbox"
+        aria-label="Animation list"
+      >
         {animations.length === 0 ? (
           <div className="p-4 text-center text-gray-500 text-sm">
             <p>No animations match the current filters</p>
-            {(filter.pack || filter.category || filter.unannotatedOnly) && (
+            {(filter.pack || filter.category || filter.unannotatedOnly || filter.searchQuery) && (
               <button
-                onClick={() => onFilterChange({})}
+                onClick={() => {
+                  setSearchInput('');
+                  onFilterChange({});
+                }}
                 className="mt-2 text-blue-400 hover:text-blue-300 underline"
               >
                 Clear filters
@@ -93,38 +194,60 @@ export function AnimationList({
             )}
           </div>
         ) : (
-          animations.map((anim, index) => {
-            const isAnnotated = annotatedPaths.has(anim.path);
-            const isCurrent = index === currentIndex;
+          <div
+            style={{
+              height: `${virtualizer.getTotalSize()}px`,
+              width: '100%',
+              position: 'relative',
+            }}
+          >
+            {virtualizer.getVirtualItems().map((virtualItem) => {
+              const anim = animations[virtualItem.index];
+              const isAnnotated = annotatedPaths.has(anim.path);
+              const isCurrent = virtualItem.index === currentIndex;
 
-            return (
-              <button
-                key={anim.path}
-                ref={isCurrent ? currentItemRef : undefined}
-                onClick={() => onSelect(index)}
-                role="option"
-                aria-selected={isCurrent}
-                aria-label={`${anim.filename}${isAnnotated ? ' (annotated)' : ''}`}
-                className={`w-full text-left px-3 py-2 text-sm border-b border-gray-700/50 transition-colors ${
-                  isCurrent
-                    ? 'bg-blue-600 text-white'
-                    : isAnnotated
-                      ? 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
-                      : 'text-gray-400 hover:bg-gray-700/50'
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  {isAnnotated && (
-                    <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0" />
+              return (
+                <button
+                  key={anim.path}
+                  onClick={() => onSelect(virtualItem.index)}
+                  role="option"
+                  aria-selected={isCurrent}
+                  aria-label={`${anim.filename}${isAnnotated ? ' (annotated)' : ''}`}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: `${virtualItem.size}px`,
+                    transform: `translateY(${virtualItem.start}px)`,
+                  }}
+                  className={`text-left px-3 py-2 text-sm border-b border-gray-700/50 transition-colors ${
+                    isAnnotated ? 'border-l-3 border-l-green-500' : 'border-l-3 border-l-transparent'
+                  } ${
+                    isCurrent
+                      ? 'bg-blue-600 text-white'
+                      : isAnnotated
+                        ? 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
+                        : 'text-gray-400 hover:bg-gray-700/50'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    {isAnnotated && (
+                      <span className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0 flex items-center justify-center">
+                        <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                    )}
+                    <span className="truncate">{anim.filename}</span>
+                  </div>
+                  {anim.category && (
+                    <p className="text-xs text-gray-500 truncate mt-0.5">{anim.category}</p>
                   )}
-                  <span className="truncate">{anim.filename}</span>
-                </div>
-                {anim.category && (
-                  <p className="text-xs text-gray-500 truncate mt-0.5">{anim.category}</p>
-                )}
-              </button>
-            );
-          })
+                </button>
+              );
+            })}
+          </div>
         )}
       </div>
 
