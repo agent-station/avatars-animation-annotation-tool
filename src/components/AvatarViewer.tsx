@@ -16,7 +16,7 @@ const DEFAULT_AVATAR_ID = 'avatar-2025-0001';
 // Module-level tracking to handle React StrictMode double-mounting
 const activeClients = new WeakMap<HTMLElement, AvatarClient>();
 const pendingCleanups = new WeakMap<HTMLElement, ReturnType<typeof setTimeout>>();
-const sdkReadyState = new WeakMap<HTMLElement, boolean>();
+const avatarLoadedState = new WeakMap<HTMLElement, boolean>();
 
 export function AvatarViewer({
   animationPath,
@@ -26,7 +26,7 @@ export function AvatarViewer({
 }: AvatarViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const clientRef = useRef<AvatarClient | null>(null);
-  const [isReady, setIsReady] = useState(false);
+  const [isAvatarLoaded, setIsAvatarLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState('Initializing...');
   const [isAnimationLoading, setIsAnimationLoading] = useState(false);
@@ -35,13 +35,13 @@ export function AvatarViewer({
   // Use refs for callbacks to avoid recreating the client when callbacks change
   const callbacksRef = useRef({ onError, onAnimationLoaded, onAnimationCompleted });
   // Ref for internal state setters so they can be called from reused clients
-  const setIsReadyRef = useRef(setIsReady);
+  const setIsAvatarLoadedRef = useRef(setIsAvatarLoaded);
   const setIsAnimationLoadingRef = useRef(setIsAnimationLoading);
 
   // Update ref when callbacks change - avoids recreating client while keeping callbacks fresh
   useEffect(() => {
     callbacksRef.current = { onError, onAnimationLoaded, onAnimationCompleted };
-    setIsReadyRef.current = setIsReady;
+    setIsAvatarLoadedRef.current = setIsAvatarLoaded;
     setIsAnimationLoadingRef.current = setIsAnimationLoading;
   }, [onError, onAnimationLoaded, onAnimationCompleted]);
 
@@ -66,22 +66,17 @@ export function AvatarViewer({
     const existingClient = activeClients.get(container);
     if (existingClient) {
       clientRef.current = existingClient;
-      // Only set isReady if SDK was actually ready
-      if (sdkReadyState.get(container)) {
-        setIsReady(true);
+      // Only set isAvatarLoaded if avatar was actually loaded
+      if (avatarLoadedState.get(container)) {
+        setIsAvatarLoaded(true);
+        setIsLoading(false);
       }
-      setIsLoading(false);
       return;
     }
 
     const client = new AvatarClient({
       container,
       cdnBaseUrl: CDN_BASE_URL,
-      onReady: () => {
-        // Avatar SDK ready - now safe to load animations
-        sdkReadyState.set(container, true);
-        setIsReadyRef.current(true);
-      },
       onProgress: (progress: number, message?: string) => {
         setLoadingMessage(message ?? `Loading... ${progress}%`);
       },
@@ -89,8 +84,10 @@ export function AvatarViewer({
         callbacksRef.current.onError?.(error.message);
       },
       onAvatarLoaded: () => {
-        // Avatar model loaded - hide loading spinner
+        // Avatar model loaded - hide loading spinner and mark as ready for animations
+        avatarLoadedState.set(container, true);
         setIsLoading(false);
+        setIsAvatarLoadedRef.current(true);
       },
       onAnimationStarted: () => {
         setIsAnimationLoadingRef.current(false);
@@ -124,16 +121,16 @@ export function AvatarViewer({
         client.destroy();
         activeClients.delete(container);
         pendingCleanups.delete(container);
-        sdkReadyState.delete(container);
+        avatarLoadedState.delete(container);
       }, 100);
       pendingCleanups.set(container, cleanupTimeout);
       clientRef.current = null;
     };
   }, []); // Empty deps - client only created once
 
-  // Load animation when path changes
+  // Load animation when path changes - must wait for avatar to be loaded
   useEffect(() => {
-    if (!isReady || !animationPath || !clientRef.current) return;
+    if (!isAvatarLoaded || !animationPath || !clientRef.current) return;
 
     const loadAnimation = async () => {
       const animationUrl = `${CDN_ANIMATIONS_BASE}/${animationPath}`;
@@ -159,7 +156,7 @@ export function AvatarViewer({
     };
 
     loadAnimation();
-  }, [isReady, animationPath, handleError]);
+  }, [isAvatarLoaded, animationPath, handleError]);
 
   // Extract filename from path for display
   const displayName = animationLoadingPath
