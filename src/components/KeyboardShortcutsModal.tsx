@@ -45,6 +45,13 @@ const SHORTCUT_GROUPS = [
     ],
   },
   {
+    title: 'Avatar',
+    shortcuts: [
+      { key: '[', description: 'Previous avatar' },
+      { key: ']', description: 'Next avatar' },
+    ],
+  },
+  {
     title: 'General',
     shortcuts: [
       { key: '?', description: 'Toggle this help' },
