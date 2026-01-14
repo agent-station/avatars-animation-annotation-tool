@@ -84,17 +84,21 @@ Copy `.env.example` to `.env.local` for local development:
 AWS infrastructure is defined in `/infra` using CDK:
 
 ```bash
-cd infra
-npm install
-npm run build        # Compile TypeScript
-npm run deploy       # Deploy to AWS
-npm run destroy      # Tear down infrastructure
+npm run deploy       # Build app + deploy all infrastructure
+npm run deploy:infra # Deploy infrastructure only
 ```
 
-### Stack Components
+### Stacks
+
+**AnimationReviewerStack** - Backend API:
 - **DynamoDB**: `animation-reviewer-annotations` table with GSI for time-based queries
 - **Lambda**: Node.js 20 function handling API requests
 - **API Gateway**: REST API with CORS, throttling, and gzip compression
+
+**AnimationReviewerSiteStack** - Static Site Hosting:
+- **S3**: Private bucket for static files
+- **CloudFront**: CDN with HTTPS and caching
+- **Basic Auth**: CloudFront Function enforces authentication (credentials in `basic-auth-function.js`)
 
 ### API Endpoints
 | Method | Path | Description |
