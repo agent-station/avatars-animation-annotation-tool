@@ -21,7 +21,7 @@ export function useAnimationList(
   const [filter, setFilter] = useState<AnimationFilter>({});
 
   useEffect(() => {
-    fetch('/animation-manifest.json')
+    fetch(`${import.meta.env.BASE_URL}animation-manifest.json`)
       .then((res) => res.json())
       .then((data: AnimationManifest) => {
         setManifest(data);

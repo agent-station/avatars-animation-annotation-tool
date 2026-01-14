@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:prod": "tsc -b && VITE_BASE_PATH=/apps/animation-reviewer/ vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate-manifest": "tsx scripts/generate-manifest.ts"
+    "generate-manifest": "tsx scripts/generate-manifest.ts",
+    "deploy:s3": "aws s3 sync dist/ s3://agent-station-avatars-staging/apps/animation-reviewer/ --delete",
+    "deploy": "npm run build:prod && npm run deploy:s3"
   },
   "dependencies": {
+    "@agent-station/avatar-types": "^1.0.9",
+    "@agent-station/avatar-web": "^1.0.9",
     "@tanstack/react-virtual": "^3.13.18",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

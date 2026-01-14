@@ -23,3 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 animations
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# CDK
+infra/cdk.out
+infra/node_modules
+infra/dist
