@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import type { AnimationEntry } from '../types';
 import type { AnimationFilter } from '../hooks/useAnimationList';
+import { useSyncStatus, type SyncStatus } from '../hooks/useSyncStatus';
 
 // Debounce hook for search input
 function useDebounce<T>(value: T, delay: number): T {
@@ -13,6 +14,50 @@ function useDebounce<T>(value: T, delay: number): T {
   }, [value, delay]);
 
   return debouncedValue;
+}
+
+// Sync status indicator component
+function SyncStatusIcon({ status }: { status: SyncStatus }) {
+  if (status === 'synced') return null;
+
+  const config = {
+    pending: {
+      color: 'text-yellow-400',
+      title: 'Pending sync',
+      icon: (
+        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="6" />
+        </svg>
+      ),
+    },
+    syncing: {
+      color: 'text-blue-400',
+      title: 'Syncing...',
+      icon: (
+        <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+        </svg>
+      ),
+    },
+    failed: {
+      color: 'text-red-400',
+      title: 'Sync failed',
+      icon: (
+        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+        </svg>
+      ),
+    },
+  };
+
+  const { color, title, icon } = config[status];
+
+  return (
+    <span className={`flex-shrink-0 ${color}`} title={title}>
+      {icon}
+    </span>
+  );
 }
 
 interface AnimationListProps {
@@ -41,6 +86,7 @@ export function AnimationList({
   const parentRef = useRef<HTMLDivElement>(null);
   const [searchInput, setSearchInput] = useState(filter.searchQuery ?? '');
   const debouncedSearch = useDebounce(searchInput, 300);
+  const { getStatus, isApiEnabled } = useSyncStatus();
 
   // Update filter when debounced search changes
   useEffect(() => {
@@ -205,6 +251,7 @@ export function AnimationList({
               const anim = animations[virtualItem.index];
               const isAnnotated = annotatedPaths.has(anim.path);
               const isCurrent = virtualItem.index === currentIndex;
+              const syncStatus = isApiEnabled ? getStatus(anim.path) : 'synced';
 
               return (
                 <button
@@ -239,7 +286,8 @@ export function AnimationList({
                         </svg>
                       </span>
                     )}
-                    <span className="truncate">{anim.filename}</span>
+                    <span className="truncate flex-1">{anim.filename}</span>
+                    <SyncStatusIcon status={syncStatus} />
                   </div>
                   {anim.category && (
                     <p className="text-xs text-gray-500 truncate mt-0.5">{anim.category}</p>

@@ -4,6 +4,7 @@ import { AnnotationPanel } from './components/AnnotationPanel';
 import { ProgressBar } from './components/ProgressBar';
 import { AnimationList } from './components/AnimationList';
 import { KeyboardShortcutsModal } from './components/KeyboardShortcutsModal';
+import { SyncStatusBar } from './components/SyncStatusBar';
 import { useAnnotations } from './hooks/useAnnotations';
 import { useAnimationList } from './hooks/useAnimationList';
 import type { AnimationEntry } from './types';
@@ -251,7 +252,10 @@ function App() {
       {/* Header */}
       <header className="bg-gray-800 border-b border-gray-700 px-4 py-3">
         <div className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold">Avatars Animation Reviewer</h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-lg font-semibold">Avatars Animation Reviewer</h1>
+            <SyncStatusBar />
+          </div>
           <div className="flex items-center gap-2">
             {/* Undo/Redo buttons */}
             <div className="flex items-center border-r border-gray-700 pr-2 mr-1">

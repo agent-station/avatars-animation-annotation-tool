@@ -1,7 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Annotation, AnnotationData, Quality, Character, ActionTag } from '../types';
+import * as api from '../services/annotationApi';
+import { syncQueue } from '../services/syncQueue';
 
 const STORAGE_KEY = 'animation-annotations';
+const LAST_SYNC_KEY = 'animation-annotations-last-sync';
 const MAX_HISTORY_SIZE = 50;
 
 // History entry for undo/redo
@@ -68,8 +71,8 @@ function isValidAnnotationData(data: unknown): data is AnnotationData {
   return true;
 }
 
-// Load initial data from localStorage synchronously to avoid cascading renders
-function loadInitialData(): AnnotationData {
+// Load initial data from localStorage synchronously
+function loadLocalData(): AnnotationData {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -84,20 +87,86 @@ function loadInitialData(): AnnotationData {
   return defaultAnnotationData;
 }
 
-export function useAnnotations() {
-  // Use lazy initialization to avoid cascading renders
-  const [data, setData] = useState<AnnotationData>(loadInitialData);
-  const [isLoading] = useState(false);
+// Save to localStorage
+function saveLocalData(data: AnnotationData): void {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
 
-  // Undo/redo history
+export function useAnnotations() {
+  const isApiEnabled = api.isApiConfigured();
+  const [data, setData] = useState<AnnotationData>(loadLocalData);
+  const [isLoading, setIsLoading] = useState(isApiEnabled);
+  const [syncError, setSyncError] = useState<string | null>(null);
+  const [pendingSyncCount, setPendingSyncCount] = useState(syncQueue.getPendingCount());
+
+  // Undo/redo history (local only)
   const [undoStack, setUndoStack] = useState<HistoryEntry[]>([]);
   const [redoStack, setRedoStack] = useState<HistoryEntry[]>([]);
   const isUndoRedoAction = useRef(false);
 
-  // Save annotations to localStorage whenever data changes
+  // Subscribe to sync queue changes
+  useEffect(() => {
+    return syncQueue.subscribe((count) => {
+      setPendingSyncCount(count);
+      if (count === 0) {
+        setSyncError(null);
+      } else if (syncQueue.hasFailedItems()) {
+        setSyncError(`${count} changes failed to sync. Click to retry.`);
+      }
+    });
+  }, []);
+
+  // Load annotations from API on mount (with incremental sync support)
+  useEffect(() => {
+    if (!isApiEnabled) return;
+
+    const loadFromApi = async () => {
+      try {
+        const lastSyncTime = localStorage.getItem(LAST_SYNC_KEY);
+        let annotations: Record<string, Annotation>;
+
+        if (lastSyncTime) {
+          // Incremental sync: fetch only changes since last sync
+          const updatedAnnotations = await api.fetchAnnotationsSince(lastSyncTime);
+          // Merge with existing local data (server data takes precedence)
+          setData((prev) => ({
+            ...prev,
+            annotations: {
+              ...prev.annotations,
+              ...updatedAnnotations,
+            },
+          }));
+          console.log(
+            `Incremental sync: ${Object.keys(updatedAnnotations).length} annotations updated since ${lastSyncTime}`
+          );
+        } else {
+          // Full sync for first load or after cache clear
+          annotations = await api.fetchAllAnnotations();
+          setData((prev) => ({
+            ...prev,
+            annotations,
+          }));
+          console.log(`Full sync: ${Object.keys(annotations).length} annotations loaded`);
+        }
+
+        // Update last sync time
+        localStorage.setItem(LAST_SYNC_KEY, new Date().toISOString());
+        setSyncError(null);
+      } catch (error) {
+        console.error('Failed to load annotations from API:', error);
+        setSyncError('Failed to sync with server. Using local data.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadFromApi();
+  }, [isApiEnabled]);
+
+  // Save annotations to localStorage as backup (always)
   useEffect(() => {
     if (!isLoading) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      saveLocalData(data);
     }
   }, [data, isLoading]);
 
@@ -109,8 +178,8 @@ export function useAnnotations() {
   );
 
   const setAnnotation = useCallback(
-    (path: string, annotation: Partial<Annotation>) => {
-      setData((prev) => {
+    async (path: string, annotation: Partial<Annotation>) => {
+      const updateLocal = (prev: AnnotationData) => {
         const existing = prev.annotations[path];
         const baseAnnotation = existing || {
           quality: 'maybe' as Quality,
@@ -135,13 +204,11 @@ export function useAnnotations() {
 
           setUndoStack((stack) => {
             const newStack = [...stack, historyEntry];
-            // Limit history size
             if (newStack.length > MAX_HISTORY_SIZE) {
               return newStack.slice(-MAX_HISTORY_SIZE);
             }
             return newStack;
           });
-          // Clear redo stack when new action is performed
           setRedoStack([]);
         }
 
@@ -152,9 +219,22 @@ export function useAnnotations() {
             [path]: newAnnotation,
           },
         };
+      };
+
+      // Optimistic update
+      setData((prev) => {
+        const updated = updateLocal(prev);
+
+        // Queue sync to API if enabled
+        if (isApiEnabled) {
+          const newAnnotation = updated.annotations[path];
+          syncQueue.enqueueSave(path, newAnnotation);
+        }
+
+        return updated;
       });
     },
-    []
+    [isApiEnabled]
   );
 
   const undo = useCallback(() => {
@@ -165,13 +245,12 @@ export function useAnnotations() {
     setRedoStack((stack) => [...stack, lastAction]);
 
     isUndoRedoAction.current = true;
-    setData((prev) => {
+
+    const updateData = (prev: AnnotationData) => {
       if (lastAction.before === undefined) {
-        // Remove the annotation
         const { [lastAction.path]: _, ...rest } = prev.annotations;
         return { ...prev, annotations: rest };
       } else {
-        // Restore previous state
         return {
           ...prev,
           annotations: {
@@ -180,10 +259,22 @@ export function useAnnotations() {
           },
         };
       }
-    });
+    };
+
+    setData(updateData);
+
+    // Queue undo sync to API
+    if (isApiEnabled) {
+      if (lastAction.before === undefined) {
+        syncQueue.enqueueDelete(lastAction.path);
+      } else {
+        syncQueue.enqueueSave(lastAction.path, lastAction.before);
+      }
+    }
+
     isUndoRedoAction.current = false;
     return true;
-  }, [undoStack]);
+  }, [undoStack, isApiEnabled]);
 
   const redo = useCallback(() => {
     if (redoStack.length === 0) return false;
@@ -193,6 +284,7 @@ export function useAnnotations() {
     setUndoStack((stack) => [...stack, nextAction]);
 
     isUndoRedoAction.current = true;
+
     setData((prev) => ({
       ...prev,
       annotations: {
@@ -200,9 +292,15 @@ export function useAnnotations() {
         [nextAction.path]: nextAction.after,
       },
     }));
+
+    // Queue redo sync to API
+    if (isApiEnabled) {
+      syncQueue.enqueueSave(nextAction.path, nextAction.after);
+    }
+
     isUndoRedoAction.current = false;
     return true;
-  }, [redoStack]);
+  }, [redoStack, isApiEnabled]);
 
   const setLastReviewedIndex = useCallback((index: number, path?: string) => {
     setData((prev) => ({
@@ -232,11 +330,10 @@ export function useAnnotations() {
     (file: File, options?: { merge?: boolean; skipConfirmation?: boolean }): Promise<boolean> => {
       return new Promise((resolve) => {
         const reader = new FileReader();
-        reader.onload = (e) => {
+        reader.onload = async (e) => {
           try {
             const parsed = JSON.parse(e.target?.result as string);
 
-            // Validate the imported data structure
             if (!isValidAnnotationData(parsed)) {
               alert('Invalid annotation file format. The file must contain valid annotation data.');
               resolve(false);
@@ -247,7 +344,6 @@ export function useAnnotations() {
             const existingCount = Object.keys(data.annotations).length;
             const importedCount = Object.keys(imported.annotations).length;
 
-            // Require confirmation unless explicitly skipped
             if (!options?.skipConfirmation && existingCount > 0) {
               const action = options?.merge ? 'merge with' : 'replace';
               const confirmed = window.confirm(
@@ -259,19 +355,37 @@ export function useAnnotations() {
               }
             }
 
+            let newAnnotations: Record<string, Annotation>;
             if (options?.merge) {
-              // Merge: imported annotations take precedence over existing
+              newAnnotations = {
+                ...data.annotations,
+                ...imported.annotations,
+              };
+            } else {
+              newAnnotations = imported.annotations;
+            }
+
+            // Update local state
+            if (options?.merge) {
               setData((prev) => ({
                 ...prev,
-                annotations: {
-                  ...prev.annotations,
-                  ...imported.annotations,
-                },
+                annotations: newAnnotations,
               }));
             } else {
-              // Replace all data
               setData(imported);
             }
+
+            // Sync to API if enabled
+            if (isApiEnabled) {
+              try {
+                await api.batchImportAnnotations(newAnnotations);
+                setSyncError(null);
+              } catch (error) {
+                console.error('Failed to sync import to API:', error);
+                setSyncError('Import saved locally but failed to sync to server.');
+              }
+            }
+
             resolve(true);
           } catch {
             alert('Failed to parse annotation file. Please ensure it is valid JSON.');
@@ -285,19 +399,26 @@ export function useAnnotations() {
         reader.readAsText(file);
       });
     },
-    [data.annotations]
+    [data, isApiEnabled]
   );
+
+  const retrySyncFailures = useCallback(() => {
+    syncQueue.retryFailed();
+  }, []);
 
   return {
     data,
     isLoading,
+    syncError,
+    isApiEnabled,
+    pendingSyncCount,
+    retrySyncFailures,
     getAnnotation,
     setAnnotation,
     setLastReviewedIndex,
     getAnnotationCount,
     exportAnnotations,
     importAnnotations,
-    // Undo/redo
     undo,
     redo,
     canUndo: undoStack.length > 0,
