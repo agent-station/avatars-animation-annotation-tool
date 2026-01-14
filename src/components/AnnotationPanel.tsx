@@ -1,5 +1,8 @@
-import { useEffect, useCallback, useMemo } from 'react';
+import { useEffect, useCallback, useMemo, useState, useRef } from 'react';
 import type { Annotation, Quality, Character, ActionTag } from '../types';
+
+// Flash feedback type
+type FlashSection = 'quality' | 'character' | 'tags' | null;
 
 interface AnnotationPanelProps {
   animationPath: string;
@@ -44,19 +47,54 @@ export function AnnotationPanel({
   const currentCharacter = annotation?.character ?? 'none';
   // Use useMemo to avoid creating a new array reference on every render
   const currentTags = useMemo(() => annotation?.tags ?? [], [annotation?.tags]);
+  const currentNotes = annotation?.notes ?? '';
+
+  // UI state
+  const [showInfo, setShowInfo] = useState(false);
+  const [notesInput, setNotesInput] = useState(currentNotes);
+
+  // Sync notes input when animation changes
+  useEffect(() => {
+    setNotesInput(currentNotes);
+  }, [currentNotes, animationPath]);
+
+  // Flash feedback state
+  const [flashSection, setFlashSection] = useState<FlashSection>(null);
+  const flashTimeoutRef = useRef<number | null>(null);
+
+  const triggerFlash = useCallback((section: FlashSection) => {
+    if (flashTimeoutRef.current) {
+      clearTimeout(flashTimeoutRef.current);
+    }
+    setFlashSection(section);
+    flashTimeoutRef.current = window.setTimeout(() => {
+      setFlashSection(null);
+    }, 300);
+  }, []);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (flashTimeoutRef.current) {
+        clearTimeout(flashTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const setQuality = useCallback(
     (quality: Quality) => {
       onAnnotationChange(animationPath, { quality });
+      triggerFlash('quality');
     },
-    [animationPath, onAnnotationChange]
+    [animationPath, onAnnotationChange, triggerFlash]
   );
 
   const setCharacter = useCallback(
     (character: Character) => {
       onAnnotationChange(animationPath, { character });
+      triggerFlash('character');
     },
-    [animationPath, onAnnotationChange]
+    [animationPath, onAnnotationChange, triggerFlash]
   );
 
   const toggleTag = useCallback(
@@ -65,9 +103,26 @@ export function AnnotationPanel({
         ? currentTags.filter((t) => t !== tag)
         : [...currentTags, tag];
       onAnnotationChange(animationPath, { tags: newTags });
+      triggerFlash('tags');
     },
-    [animationPath, currentTags, onAnnotationChange]
+    [animationPath, currentTags, onAnnotationChange, triggerFlash]
   );
+
+  const handleNotesBlur = useCallback(() => {
+    if (notesInput !== currentNotes) {
+      onAnnotationChange(animationPath, { notes: notesInput || undefined });
+    }
+  }, [animationPath, notesInput, currentNotes, onAnnotationChange]);
+
+  const handleClearAnnotation = useCallback(() => {
+    onAnnotationChange(animationPath, {
+      quality: 'maybe',
+      character: 'none',
+      tags: [],
+      notes: undefined,
+    });
+    setNotesInput('');
+  }, [animationPath, onAnnotationChange]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -125,15 +180,32 @@ export function AnnotationPanel({
 
   return (
     <div className="bg-gray-800 rounded-lg p-4 space-y-4">
-      {/* Animation info */}
+      {/* Animation info (collapsible) */}
       <div className="border-b border-gray-700 pb-3">
-        <p className="text-sm text-gray-400">Pack: {pack}</p>
-        {category && <p className="text-sm text-gray-400">Category: {category}</p>}
-        <p className="text-white font-mono text-sm mt-1">{filename}</p>
+        <button
+          onClick={() => setShowInfo(!showInfo)}
+          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors w-full text-left"
+        >
+          <svg
+            className={`w-4 h-4 transition-transform ${showInfo ? 'rotate-90' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+          <span className="text-white font-mono text-sm truncate flex-1">{filename}</span>
+        </button>
+        {showInfo && (
+          <div className="mt-2 pl-6 text-sm text-gray-400">
+            <p>Pack: {pack}</p>
+            {category && <p>Category: {category}</p>}
+          </div>
+        )}
       </div>
 
       {/* Quality */}
-      <div>
+      <div className={`p-2 -m-2 rounded-lg transition-all duration-300 ${flashSection === 'quality' ? 'ring-2 ring-green-500/50 bg-green-500/10' : ''}`}>
         <p className="text-xs text-gray-400 mb-2">Quality</p>
         <div className="flex gap-2">
           {QUALITY_OPTIONS.map((option) => (
@@ -157,7 +229,7 @@ export function AnnotationPanel({
       </div>
 
       {/* Character */}
-      <div>
+      <div className={`p-2 -m-2 rounded-lg transition-all duration-300 ${flashSection === 'character' ? 'ring-2 ring-blue-500/50 bg-blue-500/10' : ''}`}>
         <p className="text-xs text-gray-400 mb-2">Character</p>
         <div className="flex gap-2 flex-wrap">
           {CHARACTER_OPTIONS.map((option) => (
@@ -177,7 +249,7 @@ export function AnnotationPanel({
       </div>
 
       {/* Tags */}
-      <div>
+      <div className={`p-2 -m-2 rounded-lg transition-all duration-300 ${flashSection === 'tags' ? 'ring-2 ring-purple-500/50 bg-purple-500/10' : ''}`}>
         <p className="text-xs text-gray-400 mb-2">Tags</p>
         <div className="flex gap-2 flex-wrap">
           {TAG_OPTIONS.map((option) => (
@@ -195,6 +267,29 @@ export function AnnotationPanel({
           ))}
         </div>
       </div>
+
+      {/* Notes */}
+      <div>
+        <p className="text-xs text-gray-400 mb-2">Notes (optional)</p>
+        <textarea
+          value={notesInput}
+          onChange={(e) => setNotesInput(e.target.value)}
+          onBlur={handleNotesBlur}
+          placeholder="Add notes about this animation..."
+          className="w-full bg-gray-700 text-white text-sm rounded px-3 py-2 placeholder-gray-500 resize-none h-16"
+          aria-label="Annotation notes"
+        />
+      </div>
+
+      {/* Clear button */}
+      {annotation && (
+        <button
+          onClick={handleClearAnnotation}
+          className="w-full px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 text-gray-300 rounded transition-colors"
+        >
+          Clear Annotation
+        </button>
+      )}
 
       {/* Navigation hint */}
       <div className="border-t border-gray-700 pt-3 text-xs text-gray-500">

@@ -6,6 +6,7 @@ export interface Annotation {
   quality: Quality;
   character: Character;
   tags: ActionTag[];
+  notes?: string;
   annotatedAt: string;
 }
 
