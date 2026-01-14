@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { AvatarClient } from '@agent-station/avatar-web';
-import type { AvatarSDKError, ResolvedAvatar } from '@agent-station/avatar-types';
+import type { AvatarSDKError } from '@agent-station/avatar-types';
 
 interface AvatarViewerProps {
   animationPath: string | null;
@@ -11,6 +11,10 @@ interface AvatarViewerProps {
 
 const CDN_BASE_URL = 'https://avatars.staging.agsn.ai';
 const DEFAULT_AVATAR_ID = 'avatar-2025-0001';
+
+// Module-level tracking to handle React StrictMode double-mounting
+const activeClients = new WeakMap<HTMLElement, AvatarClient>();
+const pendingCleanups = new WeakMap<HTMLElement, ReturnType<typeof setTimeout>>();
 
 export function AvatarViewer({
   animationPath,
@@ -24,39 +28,66 @@ export function AvatarViewer({
   const [isLoading, setIsLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState('Initializing...');
 
-  // Initialize avatar client
+  // Use refs for callbacks to avoid recreating the client when callbacks change
+  const callbacksRef = useRef({ onError, onAnimationLoaded, onAnimationCompleted });
+
+  // Update ref when callbacks change - avoids recreating client while keeping callbacks fresh
   useEffect(() => {
-    if (!containerRef.current) return;
+    callbacksRef.current = { onError, onAnimationLoaded, onAnimationCompleted };
+  }, [onError, onAnimationLoaded, onAnimationCompleted]);
+
+  // Stable error handler for use in effects
+  const handleError = useCallback((message: string) => {
+    callbacksRef.current.onError?.(message);
+  }, []);
+
+  // Initialize avatar client - only on mount
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Cancel any pending cleanup for this container (StrictMode remount)
+    const pendingCleanup = pendingCleanups.get(container);
+    if (pendingCleanup) {
+      clearTimeout(pendingCleanup);
+      pendingCleanups.delete(container);
+    }
+
+    // Reuse existing client if available (StrictMode remount)
+    const existingClient = activeClients.get(container);
+    if (existingClient) {
+      clientRef.current = existingClient;
+      setIsReady(true);
+      setIsLoading(false);
+      return;
+    }
 
     const client = new AvatarClient({
-      container: containerRef.current,
+      container,
       cdnBaseUrl: CDN_BASE_URL,
       onReady: () => {
-        console.log('Avatar SDK ready');
+        // Avatar SDK ready
       },
       onProgress: (progress: number, message?: string) => {
         setLoadingMessage(message ?? `Loading... ${progress}%`);
       },
       onError: (error: AvatarSDKError) => {
-        console.error('Avatar SDK error:', error);
-        onError?.(error.message);
+        callbacksRef.current.onError?.(error.message);
       },
-      onAvatarLoaded: (_avatar: ResolvedAvatar) => {
+      onAvatarLoaded: () => {
         setIsReady(true);
         setIsLoading(false);
-        console.log('Avatar loaded');
       },
-      onAnimationStarted: (animationId: string, animationName: string) => {
-        console.log('Animation started:', animationId, animationName);
-        onAnimationLoaded?.();
+      onAnimationStarted: () => {
+        callbacksRef.current.onAnimationLoaded?.();
       },
-      onAnimationCompleted: (animationId: string) => {
-        console.log('Animation completed:', animationId);
-        onAnimationCompleted?.();
+      onAnimationCompleted: () => {
+        callbacksRef.current.onAnimationCompleted?.();
       },
     });
 
     clientRef.current = client;
+    activeClients.set(container, client);
 
     // Initialize and load avatar
     client
@@ -68,16 +99,21 @@ export function AvatarViewer({
         client.setOrbitControlsEnabled(true);
       })
       .catch((err: Error) => {
-        console.error('Failed to initialize avatar:', err);
-        onError?.(err.message);
+        callbacksRef.current.onError?.(err.message);
         setIsLoading(false);
       });
 
     return () => {
-      client.destroy();
+      // Delay cleanup to allow StrictMode remount to cancel it
+      const cleanupTimeout = setTimeout(() => {
+        client.destroy();
+        activeClients.delete(container);
+        pendingCleanups.delete(container);
+      }, 100);
+      pendingCleanups.set(container, cleanupTimeout);
       clientRef.current = null;
     };
-  }, [onError, onAnimationLoaded, onAnimationCompleted]);
+  }, []); // Empty deps - client only created once
 
   // Load animation when path changes
   useEffect(() => {
@@ -98,13 +134,12 @@ export function AvatarViewer({
           transitionMs: 300,
         });
       } catch (err) {
-        console.error('Failed to load animation:', err);
-        onError?.(`Failed to load animation: ${err}`);
+        handleError(`Failed to load animation: ${err}`);
       }
     };
 
     loadAnimation();
-  }, [isReady, animationPath, onError]);
+  }, [isReady, animationPath, handleError]);
 
   return (
     <div className="relative w-full h-full bg-gray-900 rounded-lg overflow-hidden">
