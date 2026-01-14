@@ -10,6 +10,8 @@ A React + TypeScript web application for annotating and evaluating 3D humanoid c
 - **Action Tags**: Categorize animations (idle, greeting, reaction, conversation, locomotion, combat)
 - **Keyboard Shortcuts**: Efficient annotation workflow
 - **LocalStorage Persistence**: Annotations saved locally with import/export support
+- **Cloud Sync** (optional): Sync annotations to AWS DynamoDB for multi-device/team access
+- **Offline-First**: Local changes queue and sync automatically when online
 - **Filtering**: Filter animations by pack, category, or annotation status
 
 ## Getting Started
@@ -39,6 +41,21 @@ npm run generate-manifest
 npm run dev
 ```
 
+### Environment Configuration (Optional)
+
+To enable cloud sync, create a `.env.local` file:
+
+```bash
+cp .env.example .env.local
+```
+
+Configure the following variables:
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_URL` | Backend API endpoint (enables cloud sync when set) |
+| `VITE_USER_ID` | User identifier for multi-user support |
+
 ## Adding Animations
 
 Place VRMA files in the `/animations` directory following this structure:
@@ -66,6 +83,10 @@ npm run generate-manifest
 | **I / G / R / C / L / X** | Toggle tags: idle / greeting / reaction / conversation / locomotion / combat |
 | **Enter / Arrows** | Navigate animations |
 | **Space** | Replay current animation |
+| **P** | Pause/Play toggle |
+| **?** | Show keyboard shortcuts help |
+| **Ctrl+Z / Cmd+Z** | Undo last annotation change |
+| **Ctrl+Shift+Z / Cmd+Shift+Z** | Redo |
 
 ## Scripts
 
@@ -77,6 +98,23 @@ npm run generate-manifest
 | `npm run preview` | Preview production build |
 | `npm run generate-manifest` | Scan /animations and create manifest |
 
+## Cloud Infrastructure (Optional)
+
+The `/infra` directory contains AWS CDK infrastructure for cloud sync:
+
+```bash
+cd infra
+npm install
+npm run deploy    # Deploy to AWS
+```
+
+### Architecture
+- **DynamoDB**: Serverless annotation storage with point-in-time recovery
+- **Lambda**: Node.js 20 API handler
+- **API Gateway**: REST API with CORS, throttling, and compression
+
+After deployment, copy the API endpoint URL to your `.env.local` file as `VITE_API_URL`.
+
 ## Tech Stack
 
 - React 19
@@ -84,6 +122,7 @@ npm run generate-manifest
 - Vite
 - Tailwind CSS
 - Agent Station Avatar SDK
+- AWS CDK (infrastructure)
 
 ## License
 
