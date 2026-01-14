@@ -41,13 +41,23 @@ All types in `src/types/index.ts`:
 - `Character`: 'sarang' | 'yeona' | 'other' | 'none'
 - `ActionTag`: 'idle' | 'greeting' | 'reaction' | 'conversation' | 'locomotion' | 'combat'
 
-## Keyboard Shortcuts (in AnnotationPanel)
+## Keyboard Shortcuts
 
+### Annotation (in AnnotationPanel)
 - **1/2/3**: Quality (approved/rejected/maybe)
 - **S/Y/O/N**: Character (Sarang/Yeona/Other/None)
 - **I/G/R/C/L/X**: Toggle tags (idle/greeting/reaction/conversation/locomotion/combat)
+
+### Navigation & Playback
 - **Enter/Arrows**: Navigate animations
 - **Space**: Replay current animation
+- **P**: Pause/Play toggle
+
+### Global (in App)
+- **?**: Show keyboard shortcuts help
+- **Ctrl+Z / Cmd+Z**: Undo last annotation change
+- **Ctrl+Shift+Z / Cmd+Shift+Z / Ctrl+Y**: Redo
+- **Escape**: Close help modal
 
 ## Animation Files
 

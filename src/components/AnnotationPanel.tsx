@@ -169,8 +169,10 @@ export function AnnotationPanel({
       if (key === 'enter') {
         onNext();
       } else if (key === 'arrowleft') {
+        e.preventDefault();
         onPrevious();
       } else if (key === 'arrowright') {
+        e.preventDefault();
         onNext();
       } else if (key === ' ') {
         e.preventDefault();

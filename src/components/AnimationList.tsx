@@ -141,10 +141,10 @@ export function AnimationList({
         {/* Quality filter chips */}
         <div className="flex gap-1 flex-wrap">
           {[
-            { value: 'all' as const, label: 'All', color: 'gray' },
-            { value: 'approved' as const, label: 'Approved', color: 'green' },
-            { value: 'rejected' as const, label: 'Rejected', color: 'red' },
-            { value: 'maybe' as const, label: 'Maybe', color: 'yellow' },
+            { value: 'all' as const, label: 'All', color: 'gray' as const },
+            { value: 'approved' as const, label: 'Approved', color: 'green' as const },
+            { value: 'rejected' as const, label: 'Rejected', color: 'red' as const },
+            { value: 'maybe' as const, label: 'Maybe', color: 'yellow' as const },
           ].map((option) => {
             const isActive = (filter.qualityFilter ?? 'all') === option.value;
             const colorClasses = {

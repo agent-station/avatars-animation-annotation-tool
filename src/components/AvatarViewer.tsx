@@ -179,6 +179,30 @@ export function AvatarViewer({
     ? animationLoadingPath.split('/').pop()?.replace('.vrma', '') ?? animationLoadingPath
     : '';
 
+  // Prevent iframe from stealing keyboard focus
+  // This ensures keyboard shortcuts continue to work after interacting with the 3D viewer
+  // We listen at window level because cross-origin iframe focus events don't bubble
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWindowBlur = () => {
+      // When window loses focus (often due to iframe getting focus),
+      // check if an iframe inside our container is now focused
+      setTimeout(() => {
+        const activeEl = document.activeElement;
+        if (activeEl?.tagName === 'IFRAME' && container.contains(activeEl)) {
+          // Blur the iframe to return focus to main document
+          (activeEl as HTMLElement).blur();
+          window.focus();
+        }
+      }, 0);
+    };
+
+    window.addEventListener('blur', handleWindowBlur);
+    return () => window.removeEventListener('blur', handleWindowBlur);
+  }, []);
+
   return (
     <div className="relative w-full h-full bg-gray-900 rounded-lg overflow-hidden">
       <div ref={containerRef} className="w-full h-full" />
