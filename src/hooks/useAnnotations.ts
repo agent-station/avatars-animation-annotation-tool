@@ -1,7 +1,15 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Annotation, AnnotationData, Quality, Character, ActionTag } from '../types';
 
 const STORAGE_KEY = 'animation-annotations';
+const MAX_HISTORY_SIZE = 50;
+
+// History entry for undo/redo
+interface HistoryEntry {
+  path: string;
+  before: Annotation | undefined;
+  after: Annotation;
+}
 
 const defaultAnnotationData: AnnotationData = {
   version: 1,
@@ -81,6 +89,11 @@ export function useAnnotations() {
   const [data, setData] = useState<AnnotationData>(loadInitialData);
   const [isLoading] = useState(false);
 
+  // Undo/redo history
+  const [undoStack, setUndoStack] = useState<HistoryEntry[]>([]);
+  const [redoStack, setRedoStack] = useState<HistoryEntry[]>([]);
+  const isUndoRedoAction = useRef(false);
+
   // Save annotations to localStorage whenever data changes
   useEffect(() => {
     if (!isLoading) {
@@ -98,28 +111,98 @@ export function useAnnotations() {
   const setAnnotation = useCallback(
     (path: string, annotation: Partial<Annotation>) => {
       setData((prev) => {
-        const existing = prev.annotations[path] || {
+        const existing = prev.annotations[path];
+        const baseAnnotation = existing || {
           quality: 'maybe' as Quality,
           character: 'none' as Character,
           tags: [] as ActionTag[],
           annotatedAt: new Date().toISOString(),
         };
 
+        const newAnnotation: Annotation = {
+          ...baseAnnotation,
+          ...annotation,
+          annotatedAt: new Date().toISOString(),
+        };
+
+        // Track history only for non-undo/redo actions
+        if (!isUndoRedoAction.current) {
+          const historyEntry: HistoryEntry = {
+            path,
+            before: existing ? { ...existing } : undefined,
+            after: { ...newAnnotation },
+          };
+
+          setUndoStack((stack) => {
+            const newStack = [...stack, historyEntry];
+            // Limit history size
+            if (newStack.length > MAX_HISTORY_SIZE) {
+              return newStack.slice(-MAX_HISTORY_SIZE);
+            }
+            return newStack;
+          });
+          // Clear redo stack when new action is performed
+          setRedoStack([]);
+        }
+
         return {
           ...prev,
           annotations: {
             ...prev.annotations,
-            [path]: {
-              ...existing,
-              ...annotation,
-              annotatedAt: new Date().toISOString(),
-            },
+            [path]: newAnnotation,
           },
         };
       });
     },
     []
   );
+
+  const undo = useCallback(() => {
+    if (undoStack.length === 0) return false;
+
+    const lastAction = undoStack[undoStack.length - 1];
+    setUndoStack((stack) => stack.slice(0, -1));
+    setRedoStack((stack) => [...stack, lastAction]);
+
+    isUndoRedoAction.current = true;
+    setData((prev) => {
+      if (lastAction.before === undefined) {
+        // Remove the annotation
+        const { [lastAction.path]: _, ...rest } = prev.annotations;
+        return { ...prev, annotations: rest };
+      } else {
+        // Restore previous state
+        return {
+          ...prev,
+          annotations: {
+            ...prev.annotations,
+            [lastAction.path]: lastAction.before,
+          },
+        };
+      }
+    });
+    isUndoRedoAction.current = false;
+    return true;
+  }, [undoStack]);
+
+  const redo = useCallback(() => {
+    if (redoStack.length === 0) return false;
+
+    const nextAction = redoStack[redoStack.length - 1];
+    setRedoStack((stack) => stack.slice(0, -1));
+    setUndoStack((stack) => [...stack, nextAction]);
+
+    isUndoRedoAction.current = true;
+    setData((prev) => ({
+      ...prev,
+      annotations: {
+        ...prev.annotations,
+        [nextAction.path]: nextAction.after,
+      },
+    }));
+    isUndoRedoAction.current = false;
+    return true;
+  }, [redoStack]);
 
   const setLastReviewedIndex = useCallback((index: number, path?: string) => {
     setData((prev) => ({
@@ -214,5 +297,10 @@ export function useAnnotations() {
     getAnnotationCount,
     exportAnnotations,
     importAnnotations,
+    // Undo/redo
+    undo,
+    redo,
+    canUndo: undoStack.length > 0,
+    canRedo: redoStack.length > 0,
   };
 }
