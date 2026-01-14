@@ -1,10 +1,32 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { AvatarViewer } from './components/AvatarViewer';
 import { AnnotationPanel } from './components/AnnotationPanel';
 import { ProgressBar } from './components/ProgressBar';
 import { AnimationList } from './components/AnimationList';
 import { useAnnotations } from './hooks/useAnnotations';
 import { useAnimationList } from './hooks/useAnimationList';
+import type { AnimationEntry } from './types';
+
+// Helper to compute initial index from saved state
+function computeInitialIndex(
+  lastReviewedPath: string | null,
+  lastReviewedIndex: number,
+  filteredAnimations: AnimationEntry[],
+  filteredCount: number
+): number {
+  // Try to find by path first (filter-aware)
+  if (lastReviewedPath) {
+    const pathIndex = filteredAnimations.findIndex((anim) => anim.path === lastReviewedPath);
+    if (pathIndex >= 0) {
+      return pathIndex;
+    }
+  }
+  // Fall back to index
+  if (lastReviewedIndex > 0) {
+    return Math.min(lastReviewedIndex, Math.max(0, filteredCount - 1));
+  }
+  return 0;
+}
 
 function App() {
   const {
@@ -35,33 +57,57 @@ function App() {
     filteredCount,
   } = useAnimationList(annotatedPaths);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [replayKey, setReplayKey] = useState(0);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
-  // Initialize current index from last reviewed
-  useEffect(() => {
-    if (!annotationsLoading && annotationData.lastReviewedIndex > 0) {
-      setCurrentIndex(Math.min(annotationData.lastReviewedIndex, filteredCount - 1));
+  // Compute initial index synchronously - only calculated once when data first becomes available
+  const initialIndex = useMemo(() => {
+    if (annotationsLoading || manifestLoading) {
+      return 0;
     }
-  }, [annotationsLoading, annotationData.lastReviewedIndex, filteredCount]);
+    return computeInitialIndex(
+      annotationData.lastReviewedPath,
+      annotationData.lastReviewedIndex,
+      filteredAnimations,
+      filteredCount
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [annotationsLoading, manifestLoading]); // Only recompute when loading state changes
 
-  const currentAnimation = getAnimationByIndex(currentIndex);
+  // Use initialIndex until user makes their first interaction
+  const [userSelectedIndex, setUserSelectedIndex] = useState<number | null>(null);
+
+  // The effective index is either the user's selection or the computed initial
+  const effectiveIndex = hasInitialized ? (userSelectedIndex ?? initialIndex) : initialIndex;
+
+  // Wrapper that tracks user interaction
+  const setCurrentIndex = useCallback(
+    (index: number) => {
+      setHasInitialized(true);
+      setUserSelectedIndex(index);
+    },
+    []
+  );
+
+  const currentAnimation = getAnimationByIndex(effectiveIndex);
 
   const goToNext = useCallback(() => {
-    if (currentIndex < filteredCount - 1) {
-      const newIndex = currentIndex + 1;
+    if (effectiveIndex < filteredCount - 1) {
+      const newIndex = effectiveIndex + 1;
+      const nextAnim = filteredAnimations[newIndex];
       setCurrentIndex(newIndex);
-      setLastReviewedIndex(newIndex);
+      setLastReviewedIndex(newIndex, nextAnim?.path);
     }
-  }, [currentIndex, filteredCount, setLastReviewedIndex]);
+  }, [effectiveIndex, filteredCount, filteredAnimations, setCurrentIndex, setLastReviewedIndex]);
 
   const goToPrevious = useCallback(() => {
-    if (currentIndex > 0) {
-      const newIndex = currentIndex - 1;
+    if (effectiveIndex > 0) {
+      const newIndex = effectiveIndex - 1;
+      const prevAnim = filteredAnimations[newIndex];
       setCurrentIndex(newIndex);
-      setLastReviewedIndex(newIndex);
+      setLastReviewedIndex(newIndex, prevAnim?.path);
     }
-  }, [currentIndex, setLastReviewedIndex]);
+  }, [effectiveIndex, filteredAnimations, setCurrentIndex, setLastReviewedIndex]);
 
   const handleReplay = useCallback(() => {
     setReplayKey((k) => k + 1);
@@ -69,10 +115,11 @@ function App() {
 
   const handleSelectAnimation = useCallback(
     (index: number) => {
+      const anim = filteredAnimations[index];
       setCurrentIndex(index);
-      setLastReviewedIndex(index);
+      setLastReviewedIndex(index, anim?.path);
     },
-    [setLastReviewedIndex]
+    [filteredAnimations, setCurrentIndex, setLastReviewedIndex]
   );
 
   const handleImport = useCallback(() => {
@@ -87,6 +134,27 @@ function App() {
     };
     input.click();
   }, [importAnnotations]);
+
+  const handleClearCache = useCallback(async () => {
+    // Clear SDK-related localStorage
+    const keysToRemove = Object.keys(localStorage).filter(
+      (k) => k.includes('agsn') || k.includes('avatar')
+    );
+    keysToRemove.forEach((k) => localStorage.removeItem(k));
+
+    // Clear Cache API
+    const cacheNames = await caches.keys();
+    await Promise.all(cacheNames.map((name) => caches.delete(name)));
+
+    // Clear IndexedDB
+    const databases = await indexedDB.databases();
+    databases.forEach((db) => {
+      if (db.name) indexedDB.deleteDatabase(db.name);
+    });
+
+    // Reload to fetch fresh SDK
+    window.location.reload();
+  }, []);
 
   if (annotationsLoading || manifestLoading) {
     return (
@@ -118,8 +186,15 @@ function App() {
       {/* Header */}
       <header className="bg-gray-800 border-b border-gray-700 px-4 py-3">
         <div className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold">Animation Evaluator</h1>
+          <h1 className="text-lg font-semibold">Avatars Animation Reviewer</h1>
           <div className="flex items-center gap-2">
+            <button
+              onClick={handleClearCache}
+              className="px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 rounded transition-colors"
+              title="Clear SDK cache and reload"
+            >
+              Clear Cache
+            </button>
             <button
               onClick={handleImport}
               className="px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 rounded transition-colors"
@@ -142,7 +217,7 @@ function App() {
         <aside className="w-64 border-r border-gray-700 p-2">
           <AnimationList
             animations={filteredAnimations}
-            currentIndex={currentIndex}
+            currentIndex={effectiveIndex}
             annotatedPaths={annotatedPaths}
             filter={filter}
             packs={packs}
@@ -156,9 +231,10 @@ function App() {
         <main className="flex-1 flex flex-col p-4 gap-4">
           {/* Progress */}
           <ProgressBar
-            current={currentIndex}
+            current={effectiveIndex}
             total={filteredCount}
-            annotated={getAnnotationCount()}
+            annotatedInView={filteredAnimations.filter((a) => annotatedPaths.has(a.path)).length}
+            annotatedTotal={getAnnotationCount()}
           />
 
           {/* Viewer and annotation panel */}
