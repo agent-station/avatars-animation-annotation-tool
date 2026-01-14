@@ -10,11 +10,13 @@ interface AvatarViewerProps {
 }
 
 const CDN_BASE_URL = 'https://avatars.staging.agsn.ai';
+const CDN_ANIMATIONS_BASE = 'https://avatars.staging.agsn.ai/animation-candidates';
 const DEFAULT_AVATAR_ID = 'avatar-2025-0001';
 
 // Module-level tracking to handle React StrictMode double-mounting
 const activeClients = new WeakMap<HTMLElement, AvatarClient>();
 const pendingCleanups = new WeakMap<HTMLElement, ReturnType<typeof setTimeout>>();
+const sdkReadyState = new WeakMap<HTMLElement, boolean>();
 
 export function AvatarViewer({
   animationPath,
@@ -30,10 +32,13 @@ export function AvatarViewer({
 
   // Use refs for callbacks to avoid recreating the client when callbacks change
   const callbacksRef = useRef({ onError, onAnimationLoaded, onAnimationCompleted });
+  // Ref for internal state setters so they can be called from reused clients
+  const setIsReadyRef = useRef(setIsReady);
 
   // Update ref when callbacks change - avoids recreating client while keeping callbacks fresh
   useEffect(() => {
     callbacksRef.current = { onError, onAnimationLoaded, onAnimationCompleted };
+    setIsReadyRef.current = setIsReady;
   }, [onError, onAnimationLoaded, onAnimationCompleted]);
 
   // Stable error handler for use in effects
@@ -57,7 +62,10 @@ export function AvatarViewer({
     const existingClient = activeClients.get(container);
     if (existingClient) {
       clientRef.current = existingClient;
-      setIsReady(true);
+      // Only set isReady if SDK was actually ready
+      if (sdkReadyState.get(container)) {
+        setIsReady(true);
+      }
       setIsLoading(false);
       return;
     }
@@ -66,7 +74,9 @@ export function AvatarViewer({
       container,
       cdnBaseUrl: CDN_BASE_URL,
       onReady: () => {
-        // Avatar SDK ready
+        // Avatar SDK ready - now safe to load animations
+        sdkReadyState.set(container, true);
+        setIsReadyRef.current(true);
       },
       onProgress: (progress: number, message?: string) => {
         setLoadingMessage(message ?? `Loading... ${progress}%`);
@@ -75,7 +85,7 @@ export function AvatarViewer({
         callbacksRef.current.onError?.(error.message);
       },
       onAvatarLoaded: () => {
-        setIsReady(true);
+        // Avatar model loaded - hide loading spinner
         setIsLoading(false);
       },
       onAnimationStarted: () => {
@@ -109,6 +119,7 @@ export function AvatarViewer({
         client.destroy();
         activeClients.delete(container);
         pendingCleanups.delete(container);
+        sdkReadyState.delete(container);
       }, 100);
       pendingCleanups.set(container, cleanupTimeout);
       clientRef.current = null;
@@ -120,11 +131,10 @@ export function AvatarViewer({
     if (!isReady || !animationPath || !clientRef.current) return;
 
     const loadAnimation = async () => {
-      try {
-        // Construct the full URL for the animation
-        const animationUrl = `/animations/${animationPath}`;
-        const animationId = animationPath.replace(/[/\\]/g, '-').replace('.vrma', '');
+      const animationUrl = `${CDN_ANIMATIONS_BASE}/${animationPath}`;
+      const animationId = animationPath.replace(/[/\\]/g, '-').replace('.vrma', '');
 
+      try {
         await clientRef.current!.loadAnimationFromUrl({
           url: animationUrl,
           animationId,
