@@ -20,7 +20,7 @@ interface AnimationManifest {
   animations: AnimationEntry[];
 }
 
-const ANIMATIONS_DIR = path.join(__dirname, '..', 'animations');
+const ANIMATIONS_DIR = path.join(__dirname, '..', 'public', 'animations');
 const OUTPUT_FILE = path.join(__dirname, '..', 'public', 'animation-manifest.json');
 
 function walkDir(dir: string, baseDir: string): string[] {
