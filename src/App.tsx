@@ -136,36 +136,33 @@ function App() {
   }, [importAnnotations]);
 
   const handleClearCache = useCallback(async () => {
-    // Clear SDK-related localStorage
-    const keysToRemove = Object.keys(localStorage).filter(
-      (k) => k.includes('agsn') || k.includes('avatar')
-    );
-    keysToRemove.forEach((k) => localStorage.removeItem(k));
+    // Clear ALL localStorage (SDK stores manifest and version info here)
+    localStorage.clear();
 
-    // Clear Cache API
+    // Clear ALL Cache API caches
     const cacheNames = await caches.keys();
     await Promise.all(cacheNames.map((name) => caches.delete(name)));
 
-    // Clear IndexedDB
+    // Clear ALL IndexedDB databases
     const databases = await indexedDB.databases();
-    databases.forEach((db) => {
-      if (db.name) indexedDB.deleteDatabase(db.name);
-    });
+    await Promise.all(
+      databases.map(
+        (db) =>
+          new Promise<void>((resolve) => {
+            if (db.name) {
+              const req = indexedDB.deleteDatabase(db.name);
+              req.onsuccess = () => resolve();
+              req.onerror = () => resolve();
+              req.onblocked = () => resolve();
+            } else {
+              resolve();
+            }
+          })
+      )
+    );
 
-    // Fetch fresh manifest to bust HTTP cache
-    const cdnBase = 'https://avatars.staging.agsn.ai';
-    await fetch(`${cdnBase}/manifest.json`, { cache: 'reload' });
-
-    // Also fetch the webview with cache bust
-    const manifestResp = await fetch(`${cdnBase}/manifest.json`, { cache: 'no-store' });
-    const manifest = await manifestResp.json();
-    const webviewVersion = manifest.webview?.version;
-    if (webviewVersion) {
-      await fetch(`${cdnBase}/webview/${webviewVersion}/index.html`, { cache: 'reload' });
-    }
-
-    // Reload to fetch fresh SDK
-    window.location.reload();
+    // Force reload bypassing cache
+    window.location.href = window.location.href + '?cacheBust=' + Date.now();
   }, []);
 
   if (annotationsLoading || manifestLoading) {
