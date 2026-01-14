@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 import type { Annotation, Quality, Character, ActionTag } from '../types';
 
 interface AnnotationPanelProps {
@@ -42,7 +42,8 @@ export function AnnotationPanel({
 }: AnnotationPanelProps) {
   const currentQuality = annotation?.quality ?? 'maybe';
   const currentCharacter = annotation?.character ?? 'none';
-  const currentTags = annotation?.tags ?? [];
+  // Use useMemo to avoid creating a new array reference on every render
+  const currentTags = useMemo(() => annotation?.tags ?? [], [annotation?.tags]);
 
   const setQuality = useCallback(
     (quality: Quality) => {
@@ -116,11 +117,11 @@ export function AnnotationPanel({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [setQuality, setCharacter, toggleTag, onNext, onPrevious, onReplay]);
 
-  // Parse animation path for display
-  const pathParts = animationPath.split('/');
-  const pack = pathParts[0];
+  // Parse animation path for display with fallbacks for malformed paths
+  const pathParts = animationPath ? animationPath.split('/').filter(Boolean) : [];
+  const pack = pathParts[0] ?? 'Unknown';
   const category = pathParts.length > 2 ? pathParts.slice(1, -1).join('/') : null;
-  const filename = pathParts[pathParts.length - 1];
+  const filename = pathParts.length > 0 ? pathParts[pathParts.length - 1] : animationPath || 'Unknown';
 
   return (
     <div className="bg-gray-800 rounded-lg p-4 space-y-4">
