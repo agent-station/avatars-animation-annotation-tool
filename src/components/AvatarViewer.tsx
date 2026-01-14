@@ -4,18 +4,11 @@ import type { AvatarSDKError } from '@agent-station/avatar-types';
 
 interface AvatarViewerProps {
   animationPath: string | null;
+  isPaused: boolean;
   onAnimationLoaded?: () => void;
   onAnimationCompleted?: () => void;
   onError?: (error: string) => void;
 }
-
-const SPEED_OPTIONS = [
-  { value: 0.25, label: '0.25x' },
-  { value: 0.5, label: '0.5x' },
-  { value: 1, label: '1x' },
-  { value: 1.5, label: '1.5x' },
-  { value: 2, label: '2x' },
-];
 
 const CDN_BASE_URL = 'https://avatars.staging.agsn.ai';
 const CDN_ANIMATIONS_BASE = 'https://avatars.staging.agsn.ai/animation-candidates';
@@ -28,6 +21,7 @@ const avatarLoadedState = new WeakMap<HTMLElement, boolean>();
 
 export function AvatarViewer({
   animationPath,
+  isPaused,
   onAnimationLoaded,
   onAnimationCompleted,
   onError,
@@ -39,8 +33,6 @@ export function AvatarViewer({
   const [loadingMessage, setLoadingMessage] = useState('Initializing...');
   const [isAnimationLoading, setIsAnimationLoading] = useState(false);
   const [animationLoadingPath, setAnimationLoadingPath] = useState<string | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const [playbackSpeed, setPlaybackSpeed] = useState(1);
 
   // Use refs for callbacks to avoid recreating the client when callbacks change
   const callbacksRef = useRef({ onError, onAnimationLoaded, onAnimationCompleted });
@@ -60,47 +52,19 @@ export function AvatarViewer({
     callbacksRef.current.onError?.(message);
   }, []);
 
-  // Playback control handlers
-  const togglePause = useCallback(() => {
-    if (!clientRef.current) return;
-    const newPaused = !isPaused;
-    setIsPaused(newPaused);
+  // Sync pause state with SDK (uses pauseRendering/resumeRendering as SDK doesn't have animation-specific pause)
+  useEffect(() => {
+    if (!clientRef.current || !isAvatarLoaded) return;
     try {
-      if (newPaused) {
-        clientRef.current.pauseAnimation?.();
+      if (isPaused) {
+        clientRef.current.pauseRendering();
       } else {
-        clientRef.current.resumeAnimation?.();
+        clientRef.current.resumeRendering();
       }
     } catch {
       // SDK may not support these methods
     }
-  }, [isPaused]);
-
-  const handleSpeedChange = useCallback((speed: number) => {
-    if (!clientRef.current) return;
-    setPlaybackSpeed(speed);
-    try {
-      clientRef.current.setAnimationSpeed?.(speed);
-    } catch {
-      // SDK may not support this method
-    }
-  }, []);
-
-  // Keyboard shortcut for pause (P key)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
-      if (e.key.toLowerCase() === 'p') {
-        e.preventDefault();
-        togglePause();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [togglePause]);
+  }, [isPaused, isAvatarLoaded]);
 
   // Initialize avatar client - only on mount
   useEffect(() => {
@@ -156,7 +120,7 @@ export function AvatarViewer({
     // Initialize and load avatar
     client
       .initialize()
-      .then(() => client.loadAvatar(DEFAULT_AVATAR_ID))
+      .then(() => client.loadAvatar(DEFAULT_AVATAR_ID, { skipAnimations: true }))
       .then(() => {
         // Set camera to full body view
         client.setCameraPreset('full-body', 500);
@@ -229,53 +193,14 @@ export function AvatarViewer({
         </div>
       )}
 
-      {/* Animation loading indicator - shown at bottom when loading new animation */}
+      {/* Animation loading indicator - shown at top-center when loading new animation */}
       {!isLoading && isAnimationLoading && (
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 bg-gray-800/90 rounded-lg px-4 py-2 flex items-center gap-3 shadow-lg">
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
           <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
-          <span className="text-gray-200 text-sm">Loading {displayName}...</span>
+          <span className="text-gray-200 text-xs">Loading {displayName}...</span>
         </div>
       )}
 
-      {/* Playback controls - shown when avatar is loaded */}
-      {!isLoading && isAvatarLoaded && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-800/90 rounded-lg px-3 py-2 flex items-center gap-3 shadow-lg">
-          {/* Play/Pause button */}
-          <button
-            onClick={togglePause}
-            className="p-1.5 text-white hover:bg-gray-700 rounded transition-colors"
-            title={isPaused ? 'Play (P)' : 'Pause (P)'}
-            aria-label={isPaused ? 'Play animation' : 'Pause animation'}
-          >
-            {isPaused ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-            )}
-          </button>
-
-          {/* Speed selector */}
-          <div className="flex items-center gap-1">
-            <span className="text-gray-400 text-xs">Speed:</span>
-            <select
-              value={playbackSpeed}
-              onChange={(e) => handleSpeedChange(Number(e.target.value))}
-              className="bg-gray-700 text-white text-xs rounded px-2 py-1 border-none outline-none"
-              aria-label="Playback speed"
-            >
-              {SPEED_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

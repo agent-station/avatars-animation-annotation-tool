@@ -77,6 +77,7 @@ function App() {
   const [replayKey, setReplayKey] = useState(0);
   const [hasInitialized, setHasInitialized] = useState(false);
   const [showShortcutsModal, setShowShortcutsModal] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Global keyboard shortcuts for help modal and undo/redo
   useEffect(() => {
@@ -162,6 +163,10 @@ function App() {
 
   const handleReplay = useCallback(() => {
     setReplayKey((k) => k + 1);
+  }, []);
+
+  const handleTogglePause = useCallback(() => {
+    setIsPaused((prev) => !prev);
   }, []);
 
   const handleSelectAnimation = useCallback(
@@ -350,6 +355,7 @@ function App() {
                 <AvatarViewer
                   key={replayKey}
                   animationPath={currentAnimation.path}
+                  isPaused={isPaused}
                   onError={(err) => console.error(err)}
                 />
               ) : (
@@ -369,6 +375,8 @@ function App() {
                   onNext={goToNext}
                   onPrevious={goToPrevious}
                   onReplay={handleReplay}
+                  isPaused={isPaused}
+                  onTogglePause={handleTogglePause}
                 />
               ) : (
                 <div className="bg-gray-800 rounded-lg p-4 text-gray-500">
