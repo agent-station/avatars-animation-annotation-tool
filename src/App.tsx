@@ -372,7 +372,7 @@ function App() {
           <AnimationList
             animations={filteredAnimations}
             currentIndex={effectiveIndex}
-            annotatedPaths={annotatedPaths}
+            annotations={annotationData.annotations}
             filter={filter}
             packs={packs}
             categories={categories}

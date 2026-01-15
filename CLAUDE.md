@@ -11,9 +11,11 @@ A React + TypeScript web application for annotating and evaluating 3D humanoid c
 ```bash
 npm run dev              # Start Vite dev server with HMR
 npm run build            # TypeScript compile + Vite production build
+npm run build:prod       # Production build with correct base path for deployment
 npm run lint             # Run ESLint
 npm run preview          # Preview production build
 npm run generate-manifest # Scan /animations directory and create public/animation-manifest.json
+npm run deploy           # Build, upload to S3, and invalidate CloudFront cache
 ```
 
 **Important**: Run `npm run generate-manifest` before first use or after adding new animation files.
@@ -79,15 +81,35 @@ Copy `.env.example` to `.env.local` for local development:
 | `VITE_API_URL` | Backend API URL (optional, enables cloud sync) |
 | `VITE_USER_ID` | User identifier for multi-user support (default: "default") |
 
+## Deployment
+
+The app is deployed to AWS S3 with CloudFront CDN.
+
+**Production URL**: https://avatars.staging.agsn.ai/apps/animation-reviewer/
+
+```bash
+npm run deploy           # Build, upload to S3, and invalidate CloudFront (recommended)
+npm run deploy:s3        # Upload dist/ to S3 only
+npm run deploy:invalidate # Invalidate CloudFront cache only
+npm run deploy:infra     # Deploy backend infrastructure (CDK)
+```
+
+**Note**: The deploy scripts use `AWS_PROFILE=agent-station-staging` automatically.
+
+### Deployment Details
+- **S3 Bucket**: `agent-station-avatars-staging`
+- **S3 Path**: `/apps/animation-reviewer/`
+- **CloudFront Distribution**: `E1WHLFADU56UIF`
+- **Base Path**: Set via `VITE_BASE_PATH=/apps/animation-reviewer/` during build
+
 ## Cloud Infrastructure
 
 AWS infrastructure is defined in `/infra` using CDK.
 
-**AWS Profile**: Use the `agent-station-staging` profile for deployments:
+**AWS Profile**: Use the `agent-station-staging` profile for infrastructure deployments:
 
 ```bash
-AWS_PROFILE=agent-station-staging npm run deploy       # Build app + deploy all infrastructure
-AWS_PROFILE=agent-station-staging npm run deploy:infra # Deploy infrastructure only
+AWS_PROFILE=agent-station-staging npm run deploy:infra # Deploy backend infrastructure only
 ```
 
 ### Stacks
@@ -96,11 +118,6 @@ AWS_PROFILE=agent-station-staging npm run deploy:infra # Deploy infrastructure o
 - **DynamoDB**: `animation-reviewer-annotations` table with GSI for time-based queries
 - **Lambda**: Node.js 20 function handling API requests
 - **API Gateway**: REST API with CORS, throttling, and gzip compression
-
-**AnimationReviewerSiteStack** - Static Site Hosting:
-- **S3**: Private bucket for static files
-- **CloudFront**: CDN with HTTPS and caching
-- **Basic Auth**: CloudFront Function enforces authentication (credentials in `basic-auth-function.js`)
 
 ### API Endpoints
 | Method | Path | Description |

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import type { AnimationEntry } from '../types';
+import type { AnimationEntry, Annotation, Quality } from '../types';
 import type { AnimationFilter } from '../hooks/useAnimationList';
 import { useSyncStatus, type SyncStatus } from '../hooks/useSyncStatus';
 
@@ -60,10 +60,62 @@ function SyncStatusIcon({ status }: { status: SyncStatus }) {
   );
 }
 
+// Quality indicator component - shows different colors/icons based on quality
+function QualityIndicator({ quality }: { quality: Quality }) {
+  const config: Record<Quality, { bgColor: string; icon: React.ReactNode; title: string }> = {
+    approved: {
+      bgColor: 'bg-green-500',
+      title: 'Approved',
+      icon: (
+        <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+        </svg>
+      ),
+    },
+    rejected: {
+      bgColor: 'bg-red-500',
+      title: 'Rejected',
+      icon: (
+        <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      ),
+    },
+    maybe: {
+      bgColor: 'bg-yellow-500',
+      title: 'Maybe',
+      icon: (
+        <span className="text-[9px] font-bold text-gray-900 leading-none">?</span>
+      ),
+    },
+  };
+
+  const { bgColor, icon, title } = config[quality];
+
+  return (
+    <span
+      className={`w-3 h-3 rounded-full ${bgColor} flex-shrink-0 flex items-center justify-center`}
+      title={title}
+    >
+      {icon}
+    </span>
+  );
+}
+
+// Get border color class based on quality
+function getQualityBorderColor(quality: Quality): string {
+  const colors: Record<Quality, string> = {
+    approved: 'border-l-green-500',
+    rejected: 'border-l-red-500',
+    maybe: 'border-l-yellow-500',
+  };
+  return colors[quality];
+}
+
 interface AnimationListProps {
   animations: AnimationEntry[];
   currentIndex: number;
-  annotatedPaths: Set<string>;
+  annotations: Record<string, Annotation>;
   filter: AnimationFilter;
   packs: string[];
   categories: string[];
@@ -76,7 +128,7 @@ const ITEM_HEIGHT = 52; // Approximate height of each list item
 export function AnimationList({
   animations,
   currentIndex,
-  annotatedPaths,
+  annotations,
   filter,
   packs,
   categories,
@@ -331,7 +383,7 @@ export function AnimationList({
           >
             {virtualizer.getVirtualItems().map((virtualItem) => {
               const anim = animations[virtualItem.index];
-              const isAnnotated = annotatedPaths.has(anim.path);
+              const annotation = annotations[anim.path];
               const isCurrent = virtualItem.index === currentIndex;
               const syncStatus = isApiEnabled ? getStatus(anim.path) : 'synced';
 
@@ -341,7 +393,7 @@ export function AnimationList({
                   onClick={() => onSelect(virtualItem.index)}
                   role="option"
                   aria-selected={isCurrent}
-                  aria-label={`${anim.filename}${isAnnotated ? ' (annotated)' : ''}`}
+                  aria-label={`${anim.filename}${annotation ? ` (${annotation.quality})` : ''}`}
                   style={{
                     position: 'absolute',
                     top: 0,
@@ -351,23 +403,17 @@ export function AnimationList({
                     transform: `translateY(${virtualItem.start}px)`,
                   }}
                   className={`text-left px-3 py-2 text-sm border-b border-gray-700/50 transition-colors ${
-                    isAnnotated ? 'border-l-3 border-l-green-500' : 'border-l-3 border-l-transparent'
+                    annotation ? `border-l-3 ${getQualityBorderColor(annotation.quality)}` : 'border-l-3 border-l-transparent'
                   } ${
                     isCurrent
                       ? 'bg-blue-600 text-white'
-                      : isAnnotated
+                      : annotation
                         ? 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
                         : 'text-gray-400 hover:bg-gray-700/50'
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    {isAnnotated && (
-                      <span className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0 flex items-center justify-center">
-                        <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                    )}
+                    {annotation && <QualityIndicator quality={annotation.quality} />}
                     <span className="truncate flex-1">{anim.filename}</span>
                     <SyncStatusIcon status={syncStatus} />
                   </div>

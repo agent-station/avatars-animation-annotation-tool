@@ -94,9 +94,28 @@ npm run generate-manifest
 |---------|-------------|
 | `npm run dev` | Start Vite dev server with HMR |
 | `npm run build` | TypeScript compile + Vite production build |
+| `npm run build:prod` | Production build with correct base path |
 | `npm run lint` | Run ESLint |
 | `npm run preview` | Preview production build |
 | `npm run generate-manifest` | Scan /animations and create manifest |
+| `npm run deploy` | Build, upload to S3, and invalidate CloudFront |
+
+## Deployment
+
+Deploy the app to AWS S3 with CloudFront CDN:
+
+```bash
+npm run deploy
+```
+
+This command:
+1. Builds the app with the correct base path (`/apps/animation-reviewer/`)
+2. Syncs the `dist/` folder to S3
+3. Invalidates the CloudFront cache
+
+**Production URL**: https://avatars.staging.agsn.ai/apps/animation-reviewer/
+
+**Note**: Requires AWS CLI configured with `agent-station-staging` profile.
 
 ## Cloud Infrastructure (Optional)
 
