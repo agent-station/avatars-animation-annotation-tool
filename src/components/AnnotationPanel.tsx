@@ -134,6 +134,12 @@ export function AnnotationPanel({
 
       const key = e.key.toLowerCase();
 
+      // Clear annotation (0)
+      if (key === '0') {
+        handleClearAnnotation();
+        return;
+      }
+
       // Quality shortcuts (1, 2, 3)
       const qualityOption = QUALITY_OPTIONS.find((q) => q.key === key);
       if (qualityOption) {
@@ -179,7 +185,7 @@ export function AnnotationPanel({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [setQuality, setCharacter, toggleTag, onNext, onPrevious, onReplay, onTogglePause]);
+  }, [setQuality, setCharacter, toggleTag, onNext, onPrevious, onReplay, onTogglePause, handleClearAnnotation]);
 
   // Parse animation path for display with fallbacks for malformed paths
   const pathParts = animationPath ? animationPath.split('/').filter(Boolean) : [];
@@ -331,12 +337,13 @@ export function AnnotationPanel({
       <button
         onClick={handleClearAnnotation}
         disabled={!annotation}
-        className={`w-full px-2.5 py-1.5 text-xs rounded-md border transition-colors ${
+        className={`w-full px-2.5 py-1.5 text-xs rounded-md border transition-colors flex items-center justify-center gap-1.5 ${
           annotation
             ? 'bg-gray-700/50 hover:bg-red-900/30 text-gray-400 hover:text-red-400 border-gray-600 hover:border-red-800'
             : 'invisible'
         }`}
       >
+        <kbd className="inline-flex items-center justify-center w-4 h-4 text-[10px] bg-black/20 rounded">0</kbd>
         Clear Annotation
       </button>
 

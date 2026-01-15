@@ -12,6 +12,7 @@ const SHORTCUT_GROUPS = [
       { key: '1', description: 'Approved' },
       { key: '2', description: 'Rejected' },
       { key: '3', description: 'Maybe' },
+      { key: '0', description: 'Clear annotation' },
     ],
   },
   {
