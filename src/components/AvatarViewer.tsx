@@ -1,18 +1,16 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { AvatarClient } from '@agent-station/avatar-web';
 import type { AvatarSDKError } from '@agent-station/avatar-types';
+import { CDN_BASE_URL, CDN_ANIMATIONS_BASE, DEFAULT_AVATAR_ID } from '../config/avatars';
 
 interface AvatarViewerProps {
   animationPath: string | null;
   isPaused: boolean;
+  avatarId?: string;
   onAnimationLoaded?: () => void;
   onAnimationCompleted?: () => void;
   onError?: (error: string) => void;
 }
-
-const CDN_BASE_URL = 'https://avatars.staging.agsn.ai';
-const CDN_ANIMATIONS_BASE = 'https://avatars.staging.agsn.ai/animation-candidates';
-const DEFAULT_AVATAR_ID = 'avatar-2025-0001';
 
 // Module-level tracking to handle React StrictMode double-mounting
 const activeClients = new WeakMap<HTMLElement, AvatarClient>();
@@ -22,17 +20,20 @@ const avatarLoadedState = new WeakMap<HTMLElement, boolean>();
 export function AvatarViewer({
   animationPath,
   isPaused,
+  avatarId = DEFAULT_AVATAR_ID,
   onAnimationLoaded,
   onAnimationCompleted,
   onError,
 }: AvatarViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const clientRef = useRef<AvatarClient | null>(null);
+  const loadedAvatarRef = useRef<string | null>(null);
   const [isAvatarLoaded, setIsAvatarLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState('Initializing...');
   const [isAnimationLoading, setIsAnimationLoading] = useState(false);
   const [animationLoadingPath, setAnimationLoadingPath] = useState<string | null>(null);
+  const [isAvatarSwitching, setIsAvatarSwitching] = useState(false);
 
   // Use refs for callbacks to avoid recreating the client when callbacks change
   const callbacksRef = useRef({ onError, onAnimationLoaded, onAnimationCompleted });
@@ -120,8 +121,9 @@ export function AvatarViewer({
     // Initialize and load avatar
     client
       .initialize()
-      .then(() => client.loadAvatar(DEFAULT_AVATAR_ID, { skipAnimations: true }))
+      .then(() => client.loadAvatar(avatarId, { skipAnimations: true }))
       .then(() => {
+        loadedAvatarRef.current = avatarId;
         // Set camera to full body view
         client.setCameraPreset('full-body', 500);
         client.setOrbitControlsEnabled(true);
@@ -174,6 +176,42 @@ export function AvatarViewer({
     loadAnimation();
   }, [isAvatarLoaded, animationPath, handleError]);
 
+  // Switch avatar when avatarId changes (after initial load)
+  useEffect(() => {
+    if (!isAvatarLoaded || !clientRef.current) return;
+    if (loadedAvatarRef.current === avatarId) return; // Already loaded
+
+    const switchAvatar = async () => {
+      setIsAvatarSwitching(true);
+      const currentAnimPath = animationPath;
+
+      try {
+        await clientRef.current!.loadAvatar(avatarId, { skipAnimations: true });
+        loadedAvatarRef.current = avatarId;
+
+        // Reload current animation on new avatar
+        if (currentAnimPath) {
+          const animationUrl = `${CDN_ANIMATIONS_BASE}/${currentAnimPath}`;
+          const animationId = currentAnimPath.replace(/[/\\]/g, '-').replace('.vrma', '');
+          await clientRef.current!.loadAnimationFromUrl({
+            url: animationUrl,
+            animationId,
+            animationName: currentAnimPath,
+            loop: true,
+            autoPlay: true,
+            transitionMs: 300,
+          });
+        }
+      } catch (err) {
+        handleError(`Failed to switch avatar: ${err}`);
+      } finally {
+        setIsAvatarSwitching(false);
+      }
+    };
+
+    switchAvatar();
+  }, [avatarId, isAvatarLoaded, animationPath, handleError]);
+
   // Extract filename from path for display
   const displayName = animationLoadingPath
     ? animationLoadingPath.split('/').pop()?.replace('.vrma', '') ?? animationLoadingPath
@@ -218,10 +256,18 @@ export function AvatarViewer({
       )}
 
       {/* Animation loading indicator - shown at top-center when loading new animation */}
-      {!isLoading && isAnimationLoading && (
+      {!isLoading && isAnimationLoading && !isAvatarSwitching && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
           <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
           <span className="text-gray-200 text-xs">Loading {displayName}...</span>
+        </div>
+      )}
+
+      {/* Avatar switching indicator */}
+      {!isLoading && isAvatarSwitching && (
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+          <div className="w-4 h-4 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
+          <span className="text-gray-200 text-xs">Switching avatar...</span>
         </div>
       )}
 

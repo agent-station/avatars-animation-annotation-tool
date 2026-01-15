@@ -5,8 +5,10 @@ import { ProgressBar } from './components/ProgressBar';
 import { AnimationList } from './components/AnimationList';
 import { KeyboardShortcutsModal } from './components/KeyboardShortcutsModal';
 import { SyncStatusBar } from './components/SyncStatusBar';
+import { AvatarSelector } from './components/AvatarSelector';
 import { useAnnotations } from './hooks/useAnnotations';
 import { useAnimationList } from './hooks/useAnimationList';
+import { AVAILABLE_AVATARS, DEFAULT_AVATAR_ID } from './config/avatars';
 import type { AnimationEntry } from './types';
 
 // Helper to compute initial index from saved state
@@ -80,6 +82,27 @@ function App() {
   const [showShortcutsModal, setShowShortcutsModal] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Avatar selection with localStorage persistence
+  const [selectedAvatarId, setSelectedAvatarId] = useState(() => {
+    const saved = localStorage.getItem('selected-avatar-id');
+    return saved && AVAILABLE_AVATARS.some((a) => a.id === saved) ? saved : DEFAULT_AVATAR_ID;
+  });
+
+  // Persist avatar selection
+  useEffect(() => {
+    localStorage.setItem('selected-avatar-id', selectedAvatarId);
+  }, [selectedAvatarId]);
+
+  // Avatar cycling helper
+  const cycleAvatar = useCallback((direction: 'next' | 'prev') => {
+    const currentIndex = AVAILABLE_AVATARS.findIndex((a) => a.id === selectedAvatarId);
+    const newIndex =
+      direction === 'next'
+        ? (currentIndex + 1) % AVAILABLE_AVATARS.length
+        : (currentIndex - 1 + AVAILABLE_AVATARS.length) % AVAILABLE_AVATARS.length;
+    setSelectedAvatarId(AVAILABLE_AVATARS[newIndex].id);
+  }, [selectedAvatarId]);
+
   // Global keyboard shortcuts for help modal and undo/redo
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -106,12 +129,25 @@ function App() {
       if (e.key === '?' && !showShortcutsModal) {
         e.preventDefault();
         setShowShortcutsModal(true);
+        return;
+      }
+
+      // Avatar cycling: [ for previous, ] for next
+      if (e.key === '[') {
+        e.preventDefault();
+        cycleAvatar('prev');
+        return;
+      }
+      if (e.key === ']') {
+        e.preventDefault();
+        cycleAvatar('next');
+        return;
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [showShortcutsModal, undo, redo]);
+  }, [showShortcutsModal, undo, redo, cycleAvatar]);
 
   // Compute initial index synchronously - only calculated once when data first becomes available
   const initialIndex = useMemo(() => {
@@ -301,6 +337,10 @@ function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </button>
+            <AvatarSelector
+              selectedAvatarId={selectedAvatarId}
+              onAvatarChange={setSelectedAvatarId}
+            />
             <button
               onClick={handleClearCache}
               className="px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 rounded transition-colors"
@@ -360,6 +400,7 @@ function App() {
                   key={replayKey}
                   animationPath={currentAnimation.path}
                   isPaused={isPaused}
+                  avatarId={selectedAvatarId}
                   onError={(err) => console.error(err)}
                 />
               ) : (
