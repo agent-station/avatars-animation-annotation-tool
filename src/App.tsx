@@ -411,7 +411,7 @@ function App() {
             </div>
 
             {/* Annotation panel */}
-            <div className="w-72 flex-shrink-0">
+            <div className="w-72 flex-shrink-0 overflow-hidden">
               {currentAnimation ? (
                 <AnnotationPanel
                   animationPath={currentAnimation.path}
