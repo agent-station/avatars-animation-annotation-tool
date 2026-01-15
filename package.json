@@ -10,9 +10,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-manifest": "tsx scripts/generate-manifest.ts",
-    "deploy:s3": "aws s3 sync dist/ s3://agent-station-avatars-staging/apps/animation-reviewer/ --delete",
+    "deploy:s3": "AWS_PROFILE=agent-station-staging aws s3 sync dist/ s3://agent-station-avatars-staging/apps/animation-reviewer/ --delete",
+    "deploy:invalidate": "AWS_PROFILE=agent-station-staging aws cloudfront create-invalidation --distribution-id E1WHLFADU56UIF --paths '/apps/animation-reviewer/*'",
     "deploy:infra": "cd infra && npm run build && npm run deploy",
-    "deploy": "npm run build:prod && npm run deploy:s3"
+    "deploy": "npm run build:prod && npm run deploy:s3 && npm run deploy:invalidate"
   },
   "dependencies": {
     "@agent-station/avatar-types": "^1.0.9",
