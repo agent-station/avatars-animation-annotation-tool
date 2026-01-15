@@ -330,15 +330,18 @@ export function AnnotationPanel({
         />
       </div>
 
-      {/* Clear button */}
-      {annotation && (
-        <button
-          onClick={handleClearAnnotation}
-          className="w-full px-2.5 py-1.5 text-xs bg-gray-700/50 hover:bg-red-900/30 text-gray-400 hover:text-red-400 rounded-md border border-gray-600 hover:border-red-800 transition-colors"
-        >
-          Clear Annotation
-        </button>
-      )}
+      {/* Clear button - always rendered to prevent layout shift */}
+      <button
+        onClick={handleClearAnnotation}
+        disabled={!annotation}
+        className={`w-full px-2.5 py-1.5 text-xs rounded-md border transition-colors ${
+          annotation
+            ? 'bg-gray-700/50 hover:bg-red-900/30 text-gray-400 hover:text-red-400 border-gray-600 hover:border-red-800'
+            : 'invisible'
+        }`}
+      >
+        Clear Annotation
+      </button>
 
       {/* Navigation hint */}
       <div className="border-t border-gray-700 pt-2.5">
