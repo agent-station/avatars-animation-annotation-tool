@@ -8,6 +8,7 @@ interface AnnotationPanelProps {
   animationPath: string;
   annotation: Annotation | undefined;
   onAnnotationChange: (path: string, annotation: Partial<Annotation>) => void;
+  onClearAnnotation: (path: string) => void;
   onNext: () => void;
   onPrevious: () => void;
   onReplay: () => void;
@@ -41,6 +42,7 @@ export function AnnotationPanel({
   animationPath,
   annotation,
   onAnnotationChange,
+  onClearAnnotation,
   onNext,
   onPrevious,
   onReplay,
@@ -118,14 +120,9 @@ export function AnnotationPanel({
   }, [animationPath, notesInput, currentNotes, onAnnotationChange]);
 
   const handleClearAnnotation = useCallback(() => {
-    onAnnotationChange(animationPath, {
-      quality: 'maybe',
-      character: 'none',
-      tags: [],
-      notes: undefined,
-    });
+    onClearAnnotation(animationPath);
     setNotesInput('');
-  }, [animationPath, onAnnotationChange]);
+  }, [animationPath, onClearAnnotation]);
 
   // Keyboard shortcuts
   useEffect(() => {

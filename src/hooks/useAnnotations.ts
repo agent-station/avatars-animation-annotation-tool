@@ -302,6 +302,51 @@ export function useAnnotations() {
     return true;
   }, [redoStack, isApiEnabled]);
 
+  const deleteAnnotation = useCallback(
+    (path: string) => {
+      setData((prev) => {
+        const existing = prev.annotations[path];
+        if (!existing) return prev;
+
+        // Track history for undo
+        if (!isUndoRedoAction.current) {
+          const historyEntry: HistoryEntry = {
+            path,
+            before: { ...existing },
+            after: {
+              quality: 'maybe' as Quality,
+              character: 'none' as Character,
+              tags: [] as ActionTag[],
+              annotatedAt: new Date().toISOString(),
+            },
+          };
+
+          setUndoStack((stack) => {
+            const newStack = [...stack, historyEntry];
+            if (newStack.length > MAX_HISTORY_SIZE) {
+              return newStack.slice(-MAX_HISTORY_SIZE);
+            }
+            return newStack;
+          });
+          setRedoStack([]);
+        }
+
+        // Remove the annotation from the object
+        const { [path]: _, ...rest } = prev.annotations;
+        return {
+          ...prev,
+          annotations: rest,
+        };
+      });
+
+      // Queue delete to API if enabled
+      if (isApiEnabled) {
+        syncQueue.enqueueDelete(path);
+      }
+    },
+    [isApiEnabled]
+  );
+
   const setLastReviewedIndex = useCallback((index: number, path?: string) => {
     setData((prev) => ({
       ...prev,
@@ -415,6 +460,7 @@ export function useAnnotations() {
     retrySyncFailures,
     getAnnotation,
     setAnnotation,
+    deleteAnnotation,
     setLastReviewedIndex,
     getAnnotationCount,
     exportAnnotations,
