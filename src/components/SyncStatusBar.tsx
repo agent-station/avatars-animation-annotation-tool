@@ -13,12 +13,12 @@ export function SyncStatusBar() {
 
   return (
     <div
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-opacity ${
+      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm border ${
         isVisible
           ? hasFailed
-            ? 'bg-red-900/50 text-red-200 border border-red-700'
-            : 'bg-yellow-900/50 text-yellow-200 border border-yellow-700'
-          : 'invisible'
+            ? 'bg-red-900/50 text-red-200 border-red-700'
+            : 'bg-yellow-900/50 text-yellow-200 border-yellow-700'
+          : 'invisible border-transparent'
       }`}
     >
       {isVisible && hasFailed ? (
