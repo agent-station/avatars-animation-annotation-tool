@@ -185,35 +185,117 @@ export function AnimationList({
         </label>
 
         {/* Quality filter chips */}
-        <div className="flex gap-1 flex-wrap">
-          {[
-            { value: 'all' as const, label: 'All', color: 'gray' as const },
-            { value: 'approved' as const, label: 'Approved', color: 'green' as const },
-            { value: 'rejected' as const, label: 'Rejected', color: 'red' as const },
-            { value: 'maybe' as const, label: 'Maybe', color: 'yellow' as const },
-          ].map((option) => {
-            const isActive = (filter.qualityFilter ?? 'all') === option.value;
-            const colorClasses = {
-              gray: isActive ? 'bg-gray-600 text-white' : 'bg-gray-700/50 text-gray-400',
-              green: isActive ? 'bg-green-600 text-white' : 'bg-gray-700/50 text-gray-400',
-              red: isActive ? 'bg-red-600 text-white' : 'bg-gray-700/50 text-gray-400',
-              yellow: isActive ? 'bg-yellow-600 text-white' : 'bg-gray-700/50 text-gray-400',
-            };
-            return (
-              <button
-                key={option.value}
-                onClick={() =>
-                  onFilterChange({
-                    ...filter,
-                    qualityFilter: option.value === 'all' ? undefined : option.value,
-                  })
-                }
-                className={`px-2 py-0.5 text-xs rounded transition-colors ${colorClasses[option.color]}`}
-              >
-                {option.label}
-              </button>
-            );
-          })}
+        <div className="space-y-1">
+          <p className="text-[10px] text-gray-500 uppercase tracking-wide">Quality</p>
+          <div className="flex gap-1 flex-wrap">
+            {[
+              { value: 'all' as const, label: 'All', color: 'gray' as const },
+              { value: 'approved' as const, label: 'Approved', color: 'green' as const },
+              { value: 'rejected' as const, label: 'Rejected', color: 'red' as const },
+              { value: 'maybe' as const, label: 'Maybe', color: 'yellow' as const },
+            ].map((option) => {
+              const isActive = (filter.qualityFilter ?? 'all') === option.value;
+              const colorClasses = {
+                gray: isActive ? 'bg-gray-600 text-white' : 'bg-gray-700/50 text-gray-400',
+                green: isActive ? 'bg-green-600 text-white' : 'bg-gray-700/50 text-gray-400',
+                red: isActive ? 'bg-red-600 text-white' : 'bg-gray-700/50 text-gray-400',
+                yellow: isActive ? 'bg-yellow-600 text-white' : 'bg-gray-700/50 text-gray-400',
+              };
+              return (
+                <button
+                  key={option.value}
+                  onClick={() =>
+                    onFilterChange({
+                      ...filter,
+                      qualityFilter: option.value === 'all' ? undefined : option.value,
+                    })
+                  }
+                  className={`px-2 py-0.5 text-xs rounded transition-colors ${colorClasses[option.color]}`}
+                >
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Character filter chips */}
+        <div className="space-y-1">
+          <p className="text-[10px] text-gray-500 uppercase tracking-wide">Character</p>
+          <div
+            className="flex gap-1 flex-wrap"
+            aria-label="Filter by annotated character"
+            title={filter.unannotatedOnly ? 'Character filter requires annotated animations' : undefined}
+          >
+            {[
+              { value: 'all' as const, label: 'All' },
+              { value: 'sarang' as const, label: 'Sarang' },
+              { value: 'yeona' as const, label: 'Yeona' },
+              { value: 'other' as const, label: 'Other' },
+              { value: 'none' as const, label: 'None' },
+            ].map((option) => {
+              const isActive = (filter.characterFilter ?? 'all') === option.value;
+              const isDisabled = filter.unannotatedOnly && option.value !== 'all' && option.value !== 'none';
+              return (
+                <button
+                  key={option.value}
+                  disabled={isDisabled}
+                  onClick={() => {
+                    if (isDisabled) return;
+                    onFilterChange({
+                      ...filter,
+                      characterFilter: option.value === 'all' ? undefined : option.value,
+                    });
+                  }}
+                  className={`px-2 py-0.5 text-xs rounded transition-colors ${
+                    isDisabled
+                      ? 'bg-gray-800 text-gray-600 cursor-not-allowed'
+                      : isActive
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-gray-700/50 text-gray-400 hover:bg-gray-700'
+                  }`}
+                >
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Tags filter chips */}
+        <div className="space-y-1">
+          <p className="text-[10px] text-gray-500 uppercase tracking-wide">Tags</p>
+          <div className="flex gap-1 flex-wrap">
+            {[
+              { value: 'all' as const, label: 'All' },
+              { value: 'idle' as const, label: 'Idle' },
+              { value: 'greeting' as const, label: 'Greeting' },
+              { value: 'reaction' as const, label: 'Reaction' },
+              { value: 'conversation' as const, label: 'Convo' },
+              { value: 'locomotion' as const, label: 'Loco' },
+              { value: 'combat' as const, label: 'Combat' },
+            ].map((option) => {
+              const isActive = (filter.tagsFilter ?? 'all') === option.value;
+              return (
+                <button
+                  key={option.value}
+                  onClick={() =>
+                    onFilterChange({
+                      ...filter,
+                      tagsFilter: option.value === 'all' ? undefined : option.value,
+                    })
+                  }
+                  className={`px-2 py-0.5 text-xs rounded transition-colors ${
+                    isActive
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-700/50 text-gray-400 hover:bg-gray-700'
+                  }`}
+                >
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -227,7 +309,7 @@ export function AnimationList({
         {animations.length === 0 ? (
           <div className="p-4 text-center text-gray-500 text-sm">
             <p>No animations match the current filters</p>
-            {(filter.pack || filter.category || filter.unannotatedOnly || filter.searchQuery) && (
+            {(filter.pack || filter.category || filter.unannotatedOnly || filter.searchQuery || filter.qualityFilter || filter.characterFilter || filter.tagsFilter) && (
               <button
                 onClick={() => {
                   setSearchInput('');

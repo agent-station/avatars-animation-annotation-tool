@@ -285,7 +285,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="h-screen flex flex-col bg-gray-900 text-white overflow-hidden">
       {/* Header */}
       <header className="bg-gray-800 border-b border-gray-700 px-4 py-3">
         <div className="flex items-center justify-between">
@@ -366,9 +366,9 @@ function App() {
       </header>
 
       {/* Main content */}
-      <div className="flex h-[calc(100vh-57px)]">
+      <div className="flex flex-1 min-h-0">
         {/* Sidebar */}
-        <aside className="w-64 border-r border-gray-700 p-2">
+        <aside className="w-80 border-r border-gray-700 p-2">
           <AnimationList
             animations={filteredAnimations}
             currentIndex={effectiveIndex}

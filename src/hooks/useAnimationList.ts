@@ -1,7 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import type { AnimationManifest, AnimationEntry } from '../types';
-
-import type { Quality, Annotation } from '../types';
+import type { AnimationManifest, AnimationEntry, Quality, Character, ActionTag, Annotation } from '../types';
 
 export interface AnimationFilter {
   pack?: string;
@@ -9,6 +7,8 @@ export interface AnimationFilter {
   unannotatedOnly?: boolean;
   searchQuery?: string;
   qualityFilter?: Quality | 'all';
+  characterFilter?: Character | 'all';
+  tagsFilter?: ActionTag | 'all';
 }
 
 export function useAnimationList(
@@ -44,10 +44,28 @@ export function useAnimationList(
       if (filter.unannotatedOnly && annotatedPaths.has(anim.path)) return false;
       if (searchLower && !anim.filename.toLowerCase().includes(searchLower)) return false;
 
+      // Get annotation once for all annotation-based filters
+      const annotation = annotations?.[anim.path];
+
       // Quality filter
-      if (filter.qualityFilter && filter.qualityFilter !== 'all' && annotations) {
-        const annotation = annotations[anim.path];
+      if (filter.qualityFilter && filter.qualityFilter !== 'all') {
         if (!annotation || annotation.quality !== filter.qualityFilter) return false;
+      }
+
+      // Character filter
+      if (filter.characterFilter && filter.characterFilter !== 'all') {
+        if (filter.characterFilter === 'none') {
+          // "None" includes unannotated AND explicitly set to 'none'
+          if (annotation && annotation.character !== 'none') return false;
+        } else {
+          // Other values require annotation with matching character
+          if (!annotation || annotation.character !== filter.characterFilter) return false;
+        }
+      }
+
+      // Tags filter
+      if (filter.tagsFilter && filter.tagsFilter !== 'all') {
+        if (!annotation || !annotation.tags?.includes(filter.tagsFilter)) return false;
       }
 
       return true;
