@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-01-13T02:26:14.606Z",
+  "generatedAt": "2026-01-15T11:48:48.217Z",
   "totalCount": 2963,
   "packs": [
     "conversation-bundle-pack",
@@ -10,7 +10,7 @@
     "human-mega-animations-pack",
     "kagura-moimoi-animation-pack",
     "kawaii-animations-100",
-    "kwwaii-animations-cool-action",
+    "kawaii-animations-cool-action",
     "maron-animation-pack",
     "sway-motion-animation-pack"
   ],
@@ -14938,2612 +14938,2612 @@
       "filename": "ka-lantern-stick-to-the-wall-walk-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-back-damage-knockdown.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-back-damage-knockdown.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-back-damage-knockdown"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-back-damage1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-back-damage1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-back-damage1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-back-damage2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-back-damage2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-back-damage2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-back-damage3.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-back-damage3.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-back-damage3"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-battle-stance-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-battle-stance-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-battle-stance-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-battle-stance-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-battle-stance-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-battle-stance-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-battle-stance-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-battle-stance-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-battle-stance-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-chest-open1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-chest-open1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-chest-open1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-chest-open2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-chest-open2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-chest-open2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-climb-down-1m.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-climb-down-1m.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-climb-down-1m"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-climb-down-2m.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-climb-down-2m.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-climb-down-2m"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-climb-up-1m.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-climb-up-1m.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-climb-up-1m"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-climb-up-2m.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-climb-up-2m.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-climb-up-2m"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-climb-up.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-climb-up.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-climb-up"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-damage-knockdown.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-damage-knockdown.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-damage-knockdown"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-damage1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-damage1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-damage1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-damage2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-damage2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-damage2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-damage3.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-damage3.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-damage3"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-dash-bwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-dash-bwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-dash-bwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-dash-fwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-dash-fwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-dash-fwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-dash-left.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-dash-left.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-dash-left"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-dash-left2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-dash-left2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-dash-left2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-dash-right.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-dash-right.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-dash-right"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade1-bwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade1-bwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade1-bwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade1-fwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade1-fwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade1-fwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade1-left.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade1-left.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade1-left"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade1-right.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade1-right.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade1-right"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade2-bwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade2-bwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade2-bwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade2-fwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade2-fwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade2-fwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade2-left.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade2-left.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade2-left"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade2-right.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade2-right.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade2-right"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade3-bwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade3-bwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade3-bwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade3-fwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade3-fwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade3-fwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade3-left.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade3-left.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade3-left"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-evade3-right.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-evade3-right.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-evade3-right"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-air-down.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-air-down.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-air-down"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-air-up.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-air-up.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-air-up"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-air.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-air.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-air"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-ground-up.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-ground-up.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-ground-up"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-ground.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-ground.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-ground"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-hanging-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-hanging-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-hanging-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-hanging-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-hanging-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-hanging-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-grappling-hook-hanging-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-grappling-hook-hanging-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-grappling-hook-hanging-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-2nd-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-2nd-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-2nd-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-2nd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-2nd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-2nd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-gliding-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-gliding-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-gliding-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-gliding-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-gliding-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-gliding-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-gliding-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-gliding-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-gliding-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-high-fall-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-high-fall-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-high-fall-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-high-fall-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-high-fall-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-high-fall-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-high-fall-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-high-fall-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-high-fall-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-over-bwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-over-bwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-over-bwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-over-fwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-over-fwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-over-fwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-over-left.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-over-left.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-over-left"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-over-left2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-over-left2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-over-left2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-over-right.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-over-right.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-over-right"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-jump-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-jump-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-jump-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-pick-up1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-pick-up1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-pick-up1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-pick-up2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-pick-up2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-pick-up2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-push-button1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-push-button1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-push-button1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-push-button2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-push-button2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-push-button2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-self-destruction-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-self-destruction-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-self-destruction-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-self-destruction-injury-end1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-self-destruction-injury-end1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-self-destruction-injury-end1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-self-destruction-injury-end2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-self-destruction-injury-end2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-self-destruction-injury-end2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-self-destruction-injury.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-self-destruction-injury.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-self-destruction-injury"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-self-destruction-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-self-destruction-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-self-destruction-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-self-destruction-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-self-destruction-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-self-destruction-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sliding-end-battle-stance.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sliding-end-battle-stance.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sliding-end-battle-stance"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sliding-end-crouch.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sliding-end-crouch.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sliding-end-crouch"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sliding-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sliding-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sliding-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sliding-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sliding-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sliding-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun1-end1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun1-end1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun1-end1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun1-end2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun1-end2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun1-end2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun1-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun1-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun1-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun1-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun1-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun1-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun2-end1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun2-end1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun2-end1"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun2-end2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun2-end2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun2-end2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun2-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun2-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun2-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-stun2-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-stun2-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-stun2-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sudden-stop-bwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sudden-stop-bwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sudden-stop-bwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sudden-stop-fwd.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sudden-stop-fwd.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sudden-stop-fwd"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sudden-stop-fwd2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sudden-stop-fwd2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sudden-stop-fwd2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sudden-stop-left.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sudden-stop-left.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sudden-stop-left"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sudden-stop-left2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sudden-stop-left2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sudden-stop-left2"
     },
     {
-      "path": "kwwaii-animations-cool-action/action/ca-sudden-stop-right.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/action/ca-sudden-stop-right.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "action",
       "filename": "ca-sudden-stop-right"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle01-breathing.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle01-breathing.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle01-breathing"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle02-look-around.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle02-look-around.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle02-look-around"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle03-stretch.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle03-stretch.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle03-stretch"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle04-arms-folded-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle04-arms-folded-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle04-arms-folded-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle04-arms-folded-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle04-arms-folded-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle04-arms-folded-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle04-arms-folded-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle04-arms-folded-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle04-arms-folded-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle04-arms-folded.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle04-arms-folded.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle04-arms-folded"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle05-look-body.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle05-look-body.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle05-look-body"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle06-phew.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle06-phew.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle06-phew"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle07-bright.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle07-bright.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle07-bright"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle08-look-down.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle08-look-down.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle08-look-down"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle09-cool-pose1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle09-cool-pose1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle09-cool-pose1"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle10-cool-pose2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle10-cool-pose2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle10-cool-pose2"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle11-peep-prevention1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle11-peep-prevention1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle11-peep-prevention1"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle12-peep-prevention2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle12-peep-prevention2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle12-peep-prevention2"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle13-pat-head1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle13-pat-head1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle13-pat-head1"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle14-pat-head2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle14-pat-head2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle14-pat-head2"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle15-happy1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle15-happy1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle15-happy1"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle16-happy2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle16-happy2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle16-happy2"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle17-surprised1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle17-surprised1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle17-surprised1"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle18-surprised2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle18-surprised2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle18-surprised2"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle19-cry.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle19-cry.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle19-cry"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle20-depressed.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle20-depressed.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle20-depressed"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle21-angry.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle21-angry.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle21-angry"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle22-wind1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle22-wind1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle22-wind1"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle23-wind2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle23-wind2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle23-wind2"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle24-wind3.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle24-wind3.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle24-wind3"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle25-stiff-shoulders.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle25-stiff-shoulders.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle25-stiff-shoulders"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle26-hair-flip.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle26-hair-flip.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle26-hair-flip"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle27-taunt.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle27-taunt.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle27-taunt"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle28-fashion-model01.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle28-fashion-model01.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle28-fashion-model01"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle29-fashion-model02.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle29-fashion-model02.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle29-fashion-model02"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle30-fashion-model03.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle30-fashion-model03.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle30-fashion-model03"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle31-fashion-model04.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle31-fashion-model04.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle31-fashion-model04"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle32-fashion-model05.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle32-fashion-model05.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle32-fashion-model05"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle33-look-behind01.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle33-look-behind01.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle33-look-behind01"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle34-look-behind02.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle34-look-behind02.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle34-look-behind02"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle35-look-behind03.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle35-look-behind03.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle35-look-behind03"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle36-look-behind04.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle36-look-behind04.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle36-look-behind04"
     },
     {
-      "path": "kwwaii-animations-cool-action/idle/ca-idle37-look-behind05.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/idle/ca-idle37-look-behind05.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "idle",
       "filename": "ca-idle37-look-behind05"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-end-top.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-end-top.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-end-top"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-idle01.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-idle01.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-idle01"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-idle02.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-idle02.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-idle02"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-idle03.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-idle03.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-idle03"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-back-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-back-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-back-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-back-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-back-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-back-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-left-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-left-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-left-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-left-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-right-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-right-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-right-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-right-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-up-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-up-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-up-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-up-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-jump-up-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-jump-up-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-release-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-release-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-release-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-release-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-release-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-release-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down1-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down1-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down1-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down1-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down1-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down2-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down2-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down2-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-slide-down2-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-slide-down2-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-start-top.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-start-top.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-start-top"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb1down-1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb1down-1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb1down-1"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb1down-2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb1down-2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb1down-2"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb1up-1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb1up-1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb1up-1"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb1up-2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb1up-2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb1up-2"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb2down-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb2down-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb2down-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb2down-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb2down-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb2down-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb2down-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb2down-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb2down-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb2up-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb2up-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb2up-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb2up-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb2up-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb2up-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/ladder/ca-ladder-climb2up-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/ladder/ca-ladder-climb2up-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "ladder",
       "filename": "ca-ladder-climb2up-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-bwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-bwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-bwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-bwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-bwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-l-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-l-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-turn-l-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-l-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-l-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-turn-l-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-l.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-l.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-turn-l"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-r-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-r-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-turn-r-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-r-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-r-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-turn-r-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-r.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-fwd-turn-r.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-fwd-turn-r"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-left-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-right-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/crouch/ca-crouch-walk-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/crouch",
       "filename": "ca-crouch-walk-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-bwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-bwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-bwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-bwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-bwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-l-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-l-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-turn-l-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-l-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-l-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-turn-l-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-l.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-l.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-turn-l"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-r-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-r-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-turn-r-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-r-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-r-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-turn-r-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-r.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-fwd-turn-r.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-fwd-turn-r"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-left-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-right-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/injured-walk/ca-injured-walk-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/injured-walk",
       "filename": "ca-injured-walk-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-bwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-bwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-bwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-bwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-bwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-bwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-bwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-bwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-bwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-bwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-bwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-bwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-l-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-l-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-turn-l-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-l-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-l-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-turn-l-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-l.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-l.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-turn-l"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-r-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-r-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-turn-r-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-r-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-r-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-turn-r-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-r.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-fwd-turn-r.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-fwd-turn-r"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left2-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left2-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left2-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left2-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left2-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left2-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left2-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left2-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left2-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-left2-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-left2-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-left2-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-right-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-right-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-right-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/run/ca-run-right2-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/run/ca-run-right2-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/run",
       "filename": "ca-run-right2-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-bwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-bwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-bwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-bwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-bwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-l-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-l-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-turn-l-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-l-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-l-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-turn-l-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-l.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-l.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-turn-l"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-r-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-r-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-turn-r-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-r-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-r-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-turn-r-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-r.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-fwd-turn-r.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-fwd-turn-r"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left2-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left2-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left2-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-left2-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-left2-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-right-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-right-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-right-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/sprint/ca-sprint-right2-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/sprint/ca-sprint-right2-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/sprint",
       "filename": "ca-sprint-right2-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-crouch-turn-left-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-crouch-turn-left-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-crouch-turn-left-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-crouch-turn-left-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-crouch-turn-left-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-crouch-turn-left-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-crouch-turn-right-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-crouch-turn-right-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-crouch-turn-right-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-crouch-turn-right-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-crouch-turn-right-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-crouch-turn-right-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-left-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-left-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-self-destruction-injury-turn-left-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-left-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-left-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-self-destruction-injury-turn-left-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-right-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-right-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-self-destruction-injury-turn-right-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-right-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-self-destruction-injury-turn-right-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-self-destruction-injury-turn-right-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-turn-left-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-turn-left-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-turn-left-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-turn-left-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-turn-left-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-turn-left-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-turn-right-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-turn-right-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-turn-right-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/turn/ca-turn-right-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/turn/ca-turn-right-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/turn",
       "filename": "ca-turn-right-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-bwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-bwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-bwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-bwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-bwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-bwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-bwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-bwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-bwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-bwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-bwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-bwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-l-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-l-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-turn-l-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-l-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-l-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-turn-l-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-l.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-l.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-turn-l"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-r-180.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-r-180.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-turn-r-180"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-r-90.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-r-90.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-turn-r-90"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-r.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-fwd-turn-r.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-fwd-turn-r"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-left-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-left-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-left-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-right-pivot.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-right-pivot.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-right-pivot"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/locomotion/walk/ca-walk-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/locomotion/walk/ca-walk-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "locomotion/walk",
       "filename": "ca-walk-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-pull-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-pull-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-pull-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-pull-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-pull-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-pull-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-pull-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-pull-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-pull-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-push-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-push-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-push-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-push-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-push-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-push-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-push-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-push-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-push-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-object-grab-to-push-hard.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-object-grab-to-push-hard.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-object-grab-to-push-hard"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-knockback.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-knockback.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-knockback"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-push-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-push-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-push-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-push-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-push-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-push-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-push-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-push-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-push-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/object-grab/ca-push-hard-to-object-grab.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/object-grab/ca-push-hard-to-object-grab.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "object-grab",
       "filename": "ca-push-hard-to-object-grab"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak01-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak01-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak01-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak01-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak01-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak01-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak01-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak01-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak01-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak02-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak02-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak02-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak02-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak02-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak02-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak02-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak02-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak02-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak03-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak03-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak03-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak03-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak03-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak03-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/speak/ca-standing-speak03-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/speak/ca-standing-speak03-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "speak",
       "filename": "ca-standing-speak03-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-left-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-right-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-down-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-down-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-end1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-end1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-end1"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-end2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-end2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-end2"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-from-jump.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-from-jump.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-from-jump"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-from-release.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-from-release.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-from-release"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-idle01.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-idle01.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-idle01"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-idle02.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-idle02.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-idle02"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-back-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-back-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-back-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-back-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-back-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-left-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-left-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-left-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-left-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-right-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-right-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-right-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-right-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-left-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-left-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-left-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-right-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-right-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-right-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-set-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-set-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-set-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-set-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-set-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-set-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-set.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-set.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-set"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-jump-up-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-jump-up-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-left-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-release.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-release.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-release"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-right-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-start1.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-start1.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-start1"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-start2.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-start2.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-start2"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-left-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-quickly.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-quickly.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-right-quickly"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-climbing-up-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-climbing-up-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-left-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-right-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-left-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-left-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-left-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-left-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-right-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-right-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-right-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-right-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-climbing-up-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-climbing-up-stop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-standing-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-standing-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-up-left-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-up-left-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-standing-up-left-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-up-right-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-up-right-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-standing-up-right-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-up-start.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-run-from-standing-up-start.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-run-from-standing-up-start"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-slide-end.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-slide-end.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-slide-end"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-slide-from-jump.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-slide-from-jump.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-slide-from-jump"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-slide-from-wall-climbing.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-slide-from-wall-climbing.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-slide-from-wall-climbing"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-slide-jump.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-slide-jump.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-slide-jump"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-slide-loop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-slide-loop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-slide-loop"
     },
     {
-      "path": "kwwaii-animations-cool-action/wall-climbing/ca-wall-slide-stop.vrma",
-      "pack": "kwwaii-animations-cool-action",
+      "path": "kawaii-animations-cool-action/wall-climbing/ca-wall-slide-stop.vrma",
+      "pack": "kawaii-animations-cool-action",
       "category": "wall-climbing",
       "filename": "ca-wall-slide-stop"
     },
