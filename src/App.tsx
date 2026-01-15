@@ -38,6 +38,7 @@ function App() {
     isLoading: annotationsLoading,
     getAnnotation,
     setAnnotation,
+    deleteAnnotation,
     setLastReviewedIndex,
     getAnnotationCount,
     exportAnnotations,
@@ -417,6 +418,7 @@ function App() {
                   animationPath={currentAnimation.path}
                   annotation={getAnnotation(currentAnimation.path)}
                   onAnnotationChange={setAnnotation}
+                  onClearAnnotation={deleteAnnotation}
                   onNext={goToNext}
                   onPrevious={goToPrevious}
                   onReplay={handleReplay}
