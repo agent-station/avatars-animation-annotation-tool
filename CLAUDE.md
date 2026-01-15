@@ -81,11 +81,13 @@ Copy `.env.example` to `.env.local` for local development:
 
 ## Cloud Infrastructure
 
-AWS infrastructure is defined in `/infra` using CDK:
+AWS infrastructure is defined in `/infra` using CDK.
+
+**AWS Profile**: Use the `agent-station-staging` profile for deployments:
 
 ```bash
-npm run deploy       # Build app + deploy all infrastructure
-npm run deploy:infra # Deploy infrastructure only
+AWS_PROFILE=agent-station-staging npm run deploy       # Build app + deploy all infrastructure
+AWS_PROFILE=agent-station-staging npm run deploy:infra # Deploy infrastructure only
 ```
 
 ### Stacks
