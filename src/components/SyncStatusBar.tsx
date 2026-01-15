@@ -3,22 +3,25 @@ import { useSyncStatus } from '../hooks/useSyncStatus';
 export function SyncStatusBar() {
   const { isApiEnabled, pendingCount, hasFailures, retry } = useSyncStatus();
 
-  // Don't show anything if API is not enabled or everything is synced
-  if (!isApiEnabled || pendingCount === 0) {
+  // Don't render at all if API is not enabled
+  if (!isApiEnabled) {
     return null;
   }
 
   const hasFailed = hasFailures();
+  const isVisible = pendingCount > 0;
 
   return (
     <div
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm ${
-        hasFailed
-          ? 'bg-red-900/50 text-red-200 border border-red-700'
-          : 'bg-yellow-900/50 text-yellow-200 border border-yellow-700'
+      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-opacity ${
+        isVisible
+          ? hasFailed
+            ? 'bg-red-900/50 text-red-200 border border-red-700'
+            : 'bg-yellow-900/50 text-yellow-200 border border-yellow-700'
+          : 'invisible'
       }`}
     >
-      {hasFailed ? (
+      {isVisible && hasFailed ? (
         <>
           <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -37,7 +40,7 @@ export function SyncStatusBar() {
         </>
       ) : (
         <>
-          <svg className="w-4 h-4 text-yellow-400 animate-spin" fill="none" viewBox="0 0 24 24">
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24">
             <circle
               className="opacity-25"
               cx="12"
@@ -52,7 +55,7 @@ export function SyncStatusBar() {
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             />
           </svg>
-          <span>Syncing {pendingCount} change{pendingCount !== 1 ? 's' : ''}...</span>
+          <span>Syncing {isVisible ? pendingCount : 1} change{pendingCount !== 1 && isVisible ? 's' : ''}...</span>
         </>
       )}
     </div>
